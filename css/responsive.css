@@ -1,0 +1,78 @@
+/* All Responsive
+================================================== */
+	a#navigation-toggle { height: 55px; line-height: 55px; float: none; margin: 0; cursor: pointer; color: #fff; padding-left: 35px; font-weight: 600; position: relative; z-index: 9; text-decoration: none !important; display: none; }
+	a#navigation-toggle .fa { margin-right: 10px; }
+	#navigation-toggle { color: #fff; }
+	#navigation-toggle:hover { color: #fff; }
+	#sidr-main { position: absolute; position: fixed; top: 0; height: 100%; z-index: 999999; width: 320px; overflow-x: none; overflow-y: auto;font-size: 13px; background: #000; color: #fff; }
+	#sidr-main { padding: 50px 30px 30px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+	.sidr.right { left: auto; right: -320px; }
+	.sidr.left { left: -320px; right: auto; }
+	#sidr-main a { color: #707070; }
+	#sidr-main a:hover { color: #fff; }
+	#sidr-main ul a { display: block; border-bottom: 1px solid #222; border-bottom: 1px solid rgba(255,255,255,0.15); padding: 8px 0; }
+	#sidr-main ul li ul { margin-left: 0; margin: 0; }
+	#sidr-main ul li ul li a { padding-left: 10px; }
+	#sidr-main ul li ul li li a { padding-left: 20px; }
+	#sidr-main ul li ul li li li a { padding-left: 30px; }
+	#sidr-main ul li ul li a:before { content: '\f0da'; display: inline-block; -webkit-font-smoothing: antialiased; font-family: 'FontAwesome'; color: #333; margin-right: 10px; }
+	.sidr-class-toggle-sidr-close:before { font-size: 16px; position: absolute; top: 15px; left: 30px; content: '\f00d'; font-family: 'FontAwesome'; color: #fff; margin: 0; }
+@media only screen and (max-width: 959px) {
+	a#navigation-toggle { display: block; }
+	#site-navigation .sf-menu{ display: none; }
+}
+/* Tablet (Portrait)
+================================================== */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.container { max-width: 85%; }
+	.left-content { width: 60%; }
+	.sidebar-container { width: 36%; }
+	.post-meta li { display: block; float: none; }
+	.post-meta li .meta-seperator { display: none; }
+	.portfolio-entry .overlay { display: none; }
+	.portfolio-entry-media a:hover img { opacity: 0.8; }
+	.search-entry { padding-left: 100px; min-height: 80px; }
+	.search-entry-thumbnail { width: 80px; }
+}
+/* Mobile (Portrait & Landscape)
+================================================== */
+@media only screen and (max-width: 767px) {
+	.container { max-width: 100%; width: 100%; }
+	.sidebar-container,
+	.left-content { width: 100%; }
+	.sidebar-container {margin-top: 40px; padding-top: 40px; border-top: 10px solid #eee; }
+	.wpex-row .col { width: 100%; margin-left: 0; margin-bottom: 25px; }
+	#wrap { margin-top: 0; margin-bottom: 0; }
+	#header-search { clear: both; position: inherit; top: auto; right: auto; margin-top: 20px; }
+	.portfolio-entry .overlay { display: none; }
+	.portfolio-entry-media a:hover img { opacity: 0.8; }
+	/*comments*/
+	.comment-details { margin-left: 0; text-align: center; }
+	.comment-details:after { display: none }
+	.comment-avatar { display: inline-block; margin-bottom: 10px; position: inherit; top: auto; left: auto; }
+	.comment-date { display: block }
+	.comment-break { display: none }
+	.comment-reply-link { display: block; padding-bottom: 10px; margin-bottom: 10px; }
+	.children { margin: 30px 0 0 }
+	.children li.depth-2, .children li.depth-3, .children li.depth-4, .children li.depth-5, .children li.depth-6, .children li.depth-7, .children li.depth-8, .children li.depth-9, .children li.depth-10 { margin: 0 }
+	#footer-bottom-left, #footer-bottom-right { float: none; text-align: center; }
+	#footer-bottom-right { margin-top: 20px }
+	#portfolio-cats li { margin-bottom: 10px }
+	.comment-meta .reply { margin-left: 0 }
+	.comment-meta .reply a { margin-top: 10px }
+}
+/* Mobile (Landscape)
+================================================== */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.sidr { width: 480px; }
+	.sidr.right { right: -480px; }
+	.portfolio-entry.span_1_of_4 { width: 49.2%; margin-left: 1.6%; margin-bottom: 2%; }
+	.portfolio-entry.span_1_of_4.count-1 { margin-left: 0; }
+	.portfolio-entry.span_1_of_4.count-3 { clear: both; margin-left: 0; }
+}
+/* Mobile (Portrait only)
+================================================== */
+@media only screen and (max-width: 479px) {
+	.search-entry { padding-left: 100px; min-height: 80px; }
+	.search-entry-thumbnail { width: 80px; }
+}
