@@ -5,7 +5,7 @@
  * @package Corporate WordPress theme
  * @author Alexander Clarke
  * @link http://www.wpexplorer.com
- * @since 1.0
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
@@ -31,7 +31,7 @@ if ( ! $author_description ) {
 
 <div class="author-info clr">
 
-	<h4 class="heading"><span><?php printf( esc_html__( 'Written by %s', 'wpex-corporate' ), $author ); ?></span></h4>
+	<h4 class="heading"><span><?php printf( esc_html__( 'Written by %s', 'corporate' ), $author ); ?></span></h4>
 
 	<div class="author-info-inner clr">
 	

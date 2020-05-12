@@ -5,7 +5,7 @@
  * @package Corporate WordPress theme
  * @author Alexander Clarke
  * @link http://www.wpexplorer.com
- * @since 1.0
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
@@ -13,10 +13,14 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-get_template_part( 'partials/home-slider' );
+// Display homepage slides
+include( locate_template( 'partials/home-slider.php' ) );
 
+// Display homepage content
 get_template_part( 'partials/home-content' );
 
-get_template_part( 'partials/home-features' );
+// Display homepage features
+include( locate_template( 'partials/home-features.php' ) );
 
-get_template_part( 'partials/home-portfolio' );
+// Display homepage portfolio items
+include( locate_template( 'partials/home-portfolio.php' ) );

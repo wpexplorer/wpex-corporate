@@ -5,7 +5,7 @@
  * @package Corporate WordPress theme
  * @author Alexander Clarke
  * @link http://www.wpexplorer.com
- * @since 1.0
+ * @since 1.0.0
  */
 
 get_header(); ?>
@@ -19,7 +19,7 @@ get_header(); ?>
 				<h1 id="error-page-title">404</h1>	
 						
 				<p id="error-page-text">
-					<?php esc_html_e( 'Unfortunately, the page you tried accessing could not be retrieved.', 'wpex-corporate' ); ?>
+					<?php esc_html_e( 'Unfortunately, the page you tried accessing could not be retrieved.', 'corporate' ); ?>
 				</p>
 
 			</div><!-- #error-page -->

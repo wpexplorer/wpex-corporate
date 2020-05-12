@@ -9,7 +9,7 @@
  * @package Corporate WordPress theme
  * @author Alexander Clarke
  * @link http://www.wpexplorer.com
- * @since 1.0
+ * @since 1.0.0
  */
 
 get_header(); ?>

@@ -5,7 +5,7 @@
  * @package Corporate WordPress theme
  * @author Alexander Clarke
  * @link http://www.wpexplorer.com
- * @since 1.0
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Return if disabled
-if ( ! get_theme_mod( 'wpex_homepage_portfolio', true ) || ! post_type_exists( 'portfolio' ) ) {
+if ( ! get_theme_mod( 'wpex_homepage_portfolio', true ) ) {
 	return;
 }
 
@@ -31,7 +31,7 @@ if ( $wpex_query->posts ) : ?>
 
 	<div id="homepage-portfolio" class="clr">
 
-		<h2 class="heading"><span><?php echo get_theme_mod( 'wpex_homepage_portfolio_heading', esc_html__( 'Recent Work', 'wpex-corporate' ) ); ?></span></h2>
+		<h2 class="heading"><span><?php echo get_theme_mod( 'wpex_homepage_portfolio_heading', esc_html__( 'Recent Work', 'corporate' ) ); ?></span></h2>
 
 		<div class="wpex-row clr">
 			<?php

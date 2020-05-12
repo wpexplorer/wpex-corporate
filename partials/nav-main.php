@@ -5,7 +5,7 @@
  * @package Corporate WordPress theme
  * @author Alexander Clarke
  * @link http://www.wpexplorer.com
- * @since 1.0
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="site-navigation-wrap">
 
-	<a href="#sidr-main" id="navigation-toggle"><span class="fa fa-bars"></span><?php echo esc_html__( 'Menu', 'wpex-corporate' ); ?></a>
+	<a href="#sidr-main" id="navigation-toggle"><span class="fa fa-bars"></span><?php echo esc_html__( 'Menu', 'corporate' ); ?></a>
 	
 	<nav id="site-navigation" class="navigation main-navigation clr" role="navigation">
 		<?php

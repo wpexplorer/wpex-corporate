@@ -5,7 +5,7 @@
  * @package Corporate WordPress theme
  * @author Alexander Clarke
  * @link http://www.wpexplorer.com
- * @since 1.0
+ * @since 1.0.0
  */
 
 get_header(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 
 		<main id="content" class="site-content" role="main">
 
-			<?php get_template_part( 'partials/portfolio-single' ); ?>
+			<?php include( locate_template( 'partials/portfolio-single.php' ) ); ?>
 
 		</main><!-- #content -->
 

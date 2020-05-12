@@ -18,7 +18,7 @@
  * @package Corporate WordPress theme
  * @author Alexander Clarke
  * @link http://www.wpexplorer.com
- * @since 1.0
+ * @since 1.0.0
  */
 
 class WPEX_Theme_Class {
@@ -32,35 +32,41 @@ class WPEX_Theme_Class {
 	public function __construct() {
 
 		// Define Contstants
-		$this->constants();
+		add_action( 'after_setup_theme', array( &$this, 'constants' ), 0 );
 
-		// Include theme core files
-		$this->includes();
+		// Load theme functions
+		add_action( 'after_setup_theme', array( &$this, 'functions' ), 1 );
+
+		// Load premium theme functions
+		add_action( 'after_setup_theme', array( &$this, 'premium' ), 2 );
+
+		// Load Classes
+		add_action( 'after_setup_theme', array( &$this, 'classes' ), 3 );
 
 		// Theme setup: Adds theme-support, image sizes, menus, etc.
-		add_action( 'after_setup_theme', array( $this, 'setup' ), 10 );
+		add_action( 'after_setup_theme', array( &$this, 'setup' ), 10 );
 
 		// Flush rewrite rules on theme switch
-		add_action( 'after_switch_theme', array( $this, 'flush_rewrite_rules' ) );
+		add_action( 'after_switch_theme', array( &$this, 'flush_rewrite_rules' ) );
 
 		// Load front-end scripts
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
 
 		// Register sidebar widget areas
-		add_action( 'widgets_init', array( $this, 'register_sidebars' ) );
+		add_action( 'widgets_init', array( &$this, 'register_sidebars' ) );
 
 		// Alter post formats based on custom post types
-		add_action( 'load-post.php', array( $this, 'adjust_formats' ) );
-		add_action( 'load-post-new.php', array( $this, 'adjust_formats' ) );
+		add_action( 'load-post.php', array( &$this, 'adjust_formats' ) );
+		add_action( 'load-post-new.php', array( &$this, 'adjust_formats' ) );
 
 		// Alters posts per page for specific archives
-		add_filter( 'pre_get_posts', array( $this, 'posts_per_page' ) );
+		add_filter( 'pre_get_posts', array( &$this, 'posts_per_page' ) );
+
+		// Set default gallery metabox post types
+		add_filter( 'wpex_gallery_metabox_post_types', array( &$this, 'gallery_metabox' ), 1 );
 
 		// Filter the archive title
-		add_filter( 'get_the_archive_title', array( $this, 'get_the_archive_title' ) );
-
-		// Filter post class
-		add_filter( 'post_class', array( $this, 'post_class' ) );
+		add_filter( 'get_the_archive_title', array( &$this, 'get_the_archive_title' ) );
 
 	}
 
@@ -71,11 +77,13 @@ class WPEX_Theme_Class {
 	 * @access  public
 	 */
 	public function constants() {
+
 		define( 'WPEX_THEME_VERSION', $this->theme_version() );
 		define( 'WPEX_INCLUDES_DIR', get_template_directory() .'/inc/' );
-		define( 'WPEX_JS_DIR_URI', get_template_directory_uri() . '/js/' );
-		define( 'WPEX_CSS_DIR_URI', get_template_directory_uri() . '/css/' );
-		define( 'WPEX_DEFAULT_FOOTER_COPY', '<a href="http://www.wordpress.org" title="WordPress" target="_blank">WordPress</a> Theme Designed &amp; Developed by <a href="https://www.wpexplorer.com/" target="_blank" title="WPExplorer">WPExplorer</a>' );
+		define( 'WPEX_CLASSES_DIR', WPEX_INCLUDES_DIR .'/classes/' );
+		define( 'WPEX_JS_DIR_URI', get_template_directory_uri(). '/js/' );
+		define( 'WPEX_CSS_DIR_URI', get_template_directory_uri(). '/css/' );
+
 	}
 
 	/**
@@ -85,29 +93,94 @@ class WPEX_Theme_Class {
 	 * @access  public
 	 */
 	public function theme_version() {
+
+		// Get theme data
 		$theme = wp_get_theme();
+
+		// Return theme version
 		return $theme->get( 'Version' );
+
 	}
 
 	/**
-	 * Include theme core files
+	 * Load required theme functions
 	 *
-	 * @since   2.3
+	 * @since   2.0.0
 	 * @access  public
 	 */
-	public function includes() {
+	public function functions() {
 
-		// Include vendor classes
-		require_once WPEX_INCLUDES_DIR . 'vendor/class-tgm-plugin-activation.php';
+		// Configures post meta via cmb_meta_boxes filter
+		require_once ( WPEX_INCLUDES_DIR .'meta-config.php' );
 
-		// Include core theme files
-		require_once WPEX_INCLUDES_DIR . 'classes/ThemeKit.php';
-		require_once WPEX_INCLUDES_DIR . 'classes/Metaboxes.php';
-		require_once WPEX_INCLUDES_DIR . 'classes/TGMPA.php';
-		require_once WPEX_INCLUDES_DIR . 'classes/Customizer.php';
+		// Include Customizer functions
+		require_once ( WPEX_INCLUDES_DIR .'customizer/header.php' );
+		require_once ( WPEX_INCLUDES_DIR .'customizer/portfolio.php' );
+		require_once ( WPEX_INCLUDES_DIR .'customizer/staff.php' );
+		require_once ( WPEX_INCLUDES_DIR .'customizer/blog.php' );
+		require_once ( WPEX_INCLUDES_DIR .'customizer/copyright.php' );
 
-		require_once WPEX_INCLUDES_DIR . 'functions/helpers.php';
-		require_once WPEX_INCLUDES_DIR . 'functions/comments-callback.php';
+		// Helper functions
+		require_once ( WPEX_INCLUDES_DIR .'helpers.php' );
+
+		// Adds classes to post entries
+		require_once ( WPEX_INCLUDES_DIR .'post-classes.php' );
+
+		// Comments output
+		require_once ( WPEX_INCLUDES_DIR .'comments-callback.php' );
+
+		// MCE Editor tweaks
+		require_once( WPEX_INCLUDES_DIR .'mce-tweaks.php' );
+
+	}
+
+	/**
+	 * Load premium theme functions and non-premium functions
+	 *
+	 * @since   2.0.0
+	 * @access  public
+	 */
+	public function premium() {
+
+		// Check for premium files
+		$files = glob( get_template_directory() .'/premium/*.php' );
+
+		// Load premium files if they exist
+		if ( $files ) {
+			foreach ( $files as $file ) {
+				require_once( $file );
+			}
+		}
+
+		// Otherwise load dashboard feed and welcome message for non-premium users
+		else {
+			require_once( WPEX_INCLUDES_DIR .'dashboard-feed.php');
+			require_once( WPEX_INCLUDES_DIR .'welcome.php');
+		}
+
+	}
+
+	/**
+	 * Load theme classes
+	 *
+	 * @since   2.0.0
+	 * @access  public
+	 */
+	public function classes() {
+
+		// Metaboxes
+		if ( ! class_exists( 'cmb_Meta_Box' ) ) {
+			require_once ( WPEX_CLASSES_DIR .'custom-metaboxes-and-fields/init.php' );
+		}
+
+		// Gallery metabox
+		require_once( WPEX_CLASSES_DIR .'gallery-metabox/gallery-metabox.php' );
+
+		// Post Types
+		require_once( WPEX_CLASSES_DIR .'post-types/slides.php' );
+		require_once( WPEX_CLASSES_DIR .'post-types/features.php' );
+		require_once( WPEX_CLASSES_DIR .'post-types/portfolio.php' );
+		require_once( WPEX_CLASSES_DIR .'post-types/staff.php' );
 
 	}
 
@@ -126,12 +199,14 @@ class WPEX_Theme_Class {
 		}
 
 		// Register navigation menus
-		register_nav_menus ( array(
-			'main_menu'	=> esc_html__( 'Main', 'wpex-corporate' ),
-		) );
+		register_nav_menus (
+			array(
+				'main_menu'	=> esc_html__( 'Main', 'corporate' ),
+			)
+		);
 		
 		// Localization support
-		load_theme_textdomain( 'wpex-corporate', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'corporate', get_template_directory() .'/languages' );
 		
 		// Enable some useful post formats for the blog
 		add_theme_support( 'post-formats', array( 'video' ) );
@@ -237,9 +312,9 @@ class WPEX_Theme_Class {
 
 		// Sidebar
 		register_sidebar( array(
-			'name'			=> esc_html__( 'Sidebar', 'wpex-corporate' ),
+			'name'			=> esc_html__( 'Sidebar', 'corporate' ),
 			'id'			=> 'sidebar',
-			'description'	=> esc_html__( 'Widgets in this area are used in the sidebar region.', 'wpex-corporate' ),
+			'description'	=> esc_html__( 'Widgets in this area are used in the sidebar region.', 'corporate' ),
 			'before_widget'	=> '<div class="sidebar-widget %2$s clr">',
 			'after_widget'	=> '</div>',
 			'before_title'	=> '<h5 class="widget-title">',
@@ -248,9 +323,9 @@ class WPEX_Theme_Class {
 
 		// Footer 1
 		register_sidebar( array(
-			'name'			=> esc_html__( 'Footer 1', 'wpex-corporate' ),
+			'name'			=> esc_html__( 'Footer 1', 'corporate' ),
 			'id'			=> 'footer-one',
-			'description'	=> esc_html__( 'Widgets in this area are used in the first footer region.', 'wpex-corporate' ),
+			'description'	=> esc_html__( 'Widgets in this area are used in the first footer region.', 'corporate' ),
 			'before_widget'	=> '<div class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
 			'before_title'	=> '<h6 class="widget-title">',
@@ -259,9 +334,9 @@ class WPEX_Theme_Class {
 
 		// Footer 2
 		register_sidebar( array(
-			'name'			=> esc_html__( 'Footer 2', 'wpex-corporate' ),
+			'name'			=> esc_html__( 'Footer 2', 'corporate' ),
 			'id'			=> 'footer-two',
-			'description'	=> esc_html__( 'Widgets in this area are used in the second footer region.', 'wpex-corporate' ),
+			'description'	=> esc_html__( 'Widgets in this area are used in the second footer region.', 'corporate' ),
 			'before_widget'	=> '<div class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
 			'before_title'	=> '<h6 class="widget-title">',
@@ -270,9 +345,9 @@ class WPEX_Theme_Class {
 
 		// Footer 3
 		register_sidebar( array(
-			'name'			=> esc_html__( 'Footer 3', 'wpex-corporate' ),
+			'name'			=> esc_html__( 'Footer 3', 'corporate' ),
 			'id'			=> 'footer-three',
-			'description'	=> esc_html__( 'Widgets in this area are used in the third footer region.', 'wpex-corporate' ),
+			'description'	=> esc_html__( 'Widgets in this area are used in the third footer region.', 'corporate' ),
 			'before_widget'	=> '<div class="footer-widget %2$s clr">',
 			'after_widget'	=> '</div>',
 			'before_title'	=> '<h6 class="widget-title">',
@@ -340,80 +415,22 @@ class WPEX_Theme_Class {
 	 * @since   2.0.0
 	 * @access  public
 	 */
-	public function get_the_archive_title( $title ) {
-		if ( is_tax() || is_category() ) {
-			$title = single_term_title();
-		}
-		return $title;
+	public function gallery_metabox( $types ) {
+		$types = array();
+		return $types;
 	}
 
 	/**
 	 * Set default gallery metabox post types
 	 *
-	 * @since   2.3
+	 * @since   2.0.0
 	 * @access  public
 	 */
-	public function post_class( $classes ) {
-
-		if ( ! apply_filters( 'wpex_filter_post_class', true ) ) {
-			return $classes;
+	public function get_the_archive_title( $title ) {
+		if ( is_tax() || is_category() ) {
+			$title = single_term_title();
 		}
-		
-		// Get global vars
-		global $post, $wpex_count;
-
-		// Get post data
-		$post_id   = $post->ID;
-		$post_type = get_post_type($post_id);
-
-		// Do nothing for slides
-		if ( $post_type == 'slides' ) {
-			return $classes;
-		}
-
-		// Search results
-		if ( is_search() ) {
-			$classes[] = 'search-entry';
-			if ( !has_post_thumbnail() ) {
-				$classes[] = 'no-featured-image';
-			}
-			return $classes;
-		}
-
-		// Custom class for non standard post types
-		if ( $post_type !== 'post' ) {
-			$classes[] = $post_type .'-entry';
-		}
-
-		// Counter
-		if ( $wpex_count ) {
-			$classes[] = 'count-'. $wpex_count;
-		}
-
-		// Portfolio
-		if ( $post_type == 'portfolio' ) {
-			$classes[] = 'span_1_of_4 col clr';
-		}
-
-		// Staff
-		elseif ( $post_type == 'staff' ) {
-			$classes[] = 'span_1_of_3 col clr';
-		}
-
-
-		// Features
-		elseif ( $post_type == 'features' ) {
-			$classes[] = 'span_1_of_3 col clr';
-		}
-
-		// All other posts
-		elseif ( ! is_singular() ) {
-			$classes[] = 'loop-entry clr';
-		}
-
-		// Return classes
-		return $classes;
-
+		return $title;
 	}
 
 }

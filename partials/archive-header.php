@@ -5,7 +5,7 @@
  * @package Corporate WordPress theme
  * @author Alexander Clarke
  * @link http://www.wpexplorer.com
- * @since 1.0
+ * @since 1.0.0
  */
 
 // Exit if accessed directly
@@ -26,7 +26,7 @@ if ( is_front_page() ) {
 		// Search title
 		if ( is_search() ) :
 
-			printf( esc_html__( 'Search Results for: %s', 'wpex-corporate' ), get_search_query() );
+			printf( esc_html__( 'Search Results for: %s', 'corporate' ), get_search_query() );
 
 		// Home title
 		elseif ( is_home() ) :
@@ -35,7 +35,7 @@ if ( is_front_page() ) {
 			if ( get_option( 'page_for_posts' ) ) {
 				echo get_the_title( get_option( 'page_for_posts' ) );
 			} else {
-				_e( 'Blog', 'wpex-corporate' );
+				_e( 'Blog', 'corporate' );
 			} 
 
 		// All else
