@@ -32,41 +32,41 @@ class WPEX_Theme_Class {
 	public function __construct() {
 
 		// Define Contstants
-		add_action( 'after_setup_theme', array( &$this, 'constants' ), 0 );
+		add_action( 'after_setup_theme', array( $this, 'constants' ), 0 );
 
 		// Load theme functions
-		add_action( 'after_setup_theme', array( &$this, 'functions' ), 1 );
+		add_action( 'after_setup_theme', array( $this, 'functions' ), 1 );
 
 		// Load premium theme functions
-		add_action( 'after_setup_theme', array( &$this, 'premium' ), 2 );
+		add_action( 'after_setup_theme', array( $this, 'premium' ), 2 );
 
 		// Load Classes
-		add_action( 'after_setup_theme', array( &$this, 'classes' ), 3 );
+		add_action( 'after_setup_theme', array( $this, 'classes' ), 3 );
 
 		// Theme setup: Adds theme-support, image sizes, menus, etc.
-		add_action( 'after_setup_theme', array( &$this, 'setup' ), 10 );
+		add_action( 'after_setup_theme', array( $this, 'setup' ), 10 );
 
 		// Flush rewrite rules on theme switch
-		add_action( 'after_switch_theme', array( &$this, 'flush_rewrite_rules' ) );
+		add_action( 'after_switch_theme', array( $this, 'flush_rewrite_rules' ) );
 
 		// Load front-end scripts
-		add_action( 'wp_enqueue_scripts', array( &$this, 'enqueue_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 		// Register sidebar widget areas
-		add_action( 'widgets_init', array( &$this, 'register_sidebars' ) );
+		add_action( 'widgets_init', array( $this, 'register_sidebars' ) );
 
 		// Alter post formats based on custom post types
-		add_action( 'load-post.php', array( &$this, 'adjust_formats' ) );
-		add_action( 'load-post-new.php', array( &$this, 'adjust_formats' ) );
+		add_action( 'load-post.php', array( $this, 'adjust_formats' ) );
+		add_action( 'load-post-new.php', array( $this, 'adjust_formats' ) );
 
 		// Alters posts per page for specific archives
-		add_filter( 'pre_get_posts', array( &$this, 'posts_per_page' ) );
+		add_filter( 'pre_get_posts', array( $this, 'posts_per_page' ) );
 
 		// Set default gallery metabox post types
-		add_filter( 'wpex_gallery_metabox_post_types', array( &$this, 'gallery_metabox' ), 1 );
+		add_filter( 'wpex_gallery_metabox_post_types', array( $this, 'gallery_metabox' ), 1 );
 
 		// Filter the archive title
-		add_filter( 'get_the_archive_title', array( &$this, 'get_the_archive_title' ) );
+		add_filter( 'get_the_archive_title', array( $this, 'get_the_archive_title' ) );
 
 	}
 
