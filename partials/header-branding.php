@@ -11,7 +11,6 @@
 defined( 'ABSPATH' ) || exit;
 
 // Vars
-$logo_img           = get_theme_mod('wpex_logo');
 $blog_name          = get_bloginfo( 'name' );
 $blog_description   = get_bloginfo( 'description' );
 $home_url           = home_url(); ?>
@@ -20,11 +19,9 @@ $home_url           = home_url(); ?>
 
     <div id="logo" class="clr">
 
-        <?php if ( $logo_img ) : ?>
+        <?php if ( has_custom_logo() ) : ?>
 
-            <a href="<?php echo esc_url( $home_url ); ?>" title="<?php echo esc_attr( $blog_name ); ?>" rel="home">
-                <img src="<?php echo esc_url( $logo_img ); ?>" alt="<?php echo esc_attr( $blog_name ); ?>" height="" width="" />
-            </a>
+            <a href="<?php echo esc_url( $home_url ); ?>" title="<?php echo esc_attr( $blog_name ); ?>" rel="home"><?php the_custom_logo(); ?></a>
 
         <?php else : ?>
 

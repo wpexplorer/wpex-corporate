@@ -16,18 +16,6 @@ function wpex_customizer_general( $wp_customize ) {
 		'title' => esc_html__( 'Header', 'wpex-corporate' ),
 	) );
 
-	// Logo
-	$wp_customize->add_setting( 'wpex_logo', array(
-		'type' => 'theme_mod',
-		'sanitize_callback'  => 'esc_url',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wpex_logo', array(
-		'label' => esc_html__('Image Logo','wpex-corporate'),
-		'section' => 'wpex_header_section',
-		'settings' => 'wpex_logo',
-	) ) );
-
 	// Search
 	$wp_customize->add_setting( 'wpex_header_search', array(
 		'type' => 'theme_mod',
