@@ -23,45 +23,4 @@ Corporate is the perfect theme to build your business website or personal portfo
 2. Click Upload Theme and Choose File, then select the wpex-corporate.zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
- 
-WPEX Corporate includes support for WooCommerce and for Infinite Scroll in Jetpack.
- 
-== Screenshots ==
- 
-1. This screen shot description corresponds to screenshot.png.
- 
 == Changelog ==
-
-= 2.1.0 =
-* Released: May 14, 2015
-
-https://wpexplorer-updates.com/changelog/corporate-wordpress-theme/
-
-= 2.0.0 =
-* Released: April 8, 2015
-
-https://wpexplorer-updates.com/changelog/corporate-wordpress-theme/
-
-= 1.3.1 =
-* Released: November 3, 2014
-
-https://wpexplorer-updates.com/changelog/corporate-wordpress-theme/
-
-= 1.3.0 =
-* Released: October 27, 2014
-
-Initial release
-
-== Upgrade Notice ==
- 
-= 2.2.1 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
- 
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
