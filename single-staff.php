@@ -3,8 +3,8 @@
  * The Template for displaying all single staff posts.
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 

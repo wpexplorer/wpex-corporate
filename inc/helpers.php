@@ -37,7 +37,7 @@ if ( ! function_exists( 'wpex_list_post_terms' ) ) {
         }
         $list_terms = implode( ', ', $list_terms );
         if ( $echo ) {
-            echo $list_terms;
+            echo wp_kses_post( $list_terms );
         } else {
             return $list_terms;
         }
@@ -77,14 +77,14 @@ if ( ! function_exists( 'wpex_excerpt' ) ) {
 		else {
 			$output = wp_trim_words( strip_shortcodes( get_the_content( $id ) ), $length );
 			if ( $readmore == true ) {
-				$text			= apply_filters( 'wpex_readmore_text', esc_html__( 'continue reading', 'corporate' ) );
-				$readmore_link	= '<span class="wpex-readmore"><a href="'. get_permalink( $id ) .'" title="'. $text .'" rel="bookmark">'. $text .' &rarr;</a></span>';
+				$text			= apply_filters( 'wpex_readmore_text', esc_html__( 'continue reading', 'wpex-corporate' ) );
+				$readmore_link	= '<span class="wpex-readmore"><a href="'. get_permalink( $id ) .'" title="'. esc_attr( $text ) .'" rel="bookmark">'. esc_html( $text ) .' &rarr;</a></span>';
 				$output .= apply_filters( 'wpex_readmore_link', $readmore_link );
 			}
 		}
 
 		// Echo output
-		echo $output;
+		echo wp_kses_post( $output );
 
 	}
 }
@@ -166,12 +166,10 @@ if ( ! function_exists( 'wpex_pagejump' ) ) {
 		// Display next/previous pagination
 		if ( 1 != $pages ) {
 			echo '<div class="post-navigation clr"><div class="alignleft">';
-				previous_posts_link( '&larr; ' . esc_html__( 'Newer Posts', 'corporate' ) );
+				previous_posts_link( '&larr; ' . esc_html__( 'Newer Posts', 'wpex-corporate' ) );
 			echo '</div><div class="alignright">';
-				next_posts_link( esc_html__( 'Older Posts', 'corporate' ) .' &rarr;' );
+				next_posts_link( esc_html__( 'Older Posts', 'wpex-corporate' ) .' &rarr;' );
 			echo '</div></div>';
-		}
-		
+		}	
 	}
-
 }

@@ -3,8 +3,8 @@
  * The default template for displaying the footer copyright
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -14,17 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get copyright text
-$copy = get_theme_mod( 'wpex_copyright', 'Corporate <a href="http://www.wordpress.org" title="WordPress" target="_blank">WordPress</a> Theme Designed &amp; Developed by <a href="http://themeforest.net/user/WPExplorer?ref=WPExplorer" target="_blank" title="WPExplorer">WPExplorer</a>' ); ?>
+$copy = get_theme_mod( 'wpex_copyright' );
+$copy = $copy ? $copy : '<a href="https://www.wpexplorer.com/corporate-free-wordpress-theme/" title="Corporate WordPress Theme">Corporate Theme</a> by <a href="https://www.wpexplorer.com" title="WPExplorer Themes">WPExplorer</a> Powered by <a href="https://wordpress.org/" title="WordPress">WordPress</a>'; ?>
 
 <footer id="copyright-wrap" class="clear">
 	<div id="copyright" role="contentinfo" class="clr">
-		<?php
-		// Display custom copyright
-		if ( $copy ) {
-			echo do_shortcode( $copy );
-		// Copyright fallback
-		} else { ?>
-			&copy; <?php esc_html_e( 'Copyright', 'corporate' ); ?> <?php the_date( 'Y' ); ?> &middot; <a href="<?php echo home_url(); ?>" title="<?php bloginfo( 'name' ); ?>"><?php bloginfo( 'name' ); ?></a>
-		<?php } ?>
+		<?php echo do_shortcode( wp_kses_post( $copy ) );?>
 	</div><!-- #copyright -->
 </footer><!-- #footer-wrap -->

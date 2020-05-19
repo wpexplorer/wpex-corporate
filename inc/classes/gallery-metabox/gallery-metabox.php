@@ -5,9 +5,9 @@
  * http://wordpress.org/plugins/easy-image-gallery/
  * https://github.com/woothemes/woocommerce
  *
- * @author      Alexander Clarke
+ * @author      WPExplorer.com
  * @copyright   Copyright (c) 2014, Symple Workz LLC
- * @link        http://www.wpexplorer.com
+ * @link        https://www.wpexplorer.com
  * @version     1.0.0
  * @link        https://github.com/wpexplorer/gallery-metabox
  */
@@ -53,7 +53,7 @@ if ( ! class_exists( 'WPEX_Gallery_Metabox' ) ) {
             foreach ( $types as $type ) {
                 add_meta_box(
                     'wpex-gallery-metabox',         // ID
-                    esc_html__( 'Image Gallery', 'corporate' ),  // Title
+                    esc_html__( 'Image Gallery', 'wpex-corporate' ),  // Title
                     array( $this, 'render' ),       // Callback
                     $type,                          // Post type
                     'normal',                       // Cotext
@@ -77,9 +77,9 @@ if ( ! class_exists( 'WPEX_Gallery_Metabox' ) ) {
                     if ( $attachments ) {
                         foreach ( $attachments as $attachment_id ) {
                             if ( wp_attachment_is_image ( $attachment_id  ) ) {
-                                echo '<li class="image" data-attachment_id="' . $attachment_id . '"><div class="attachment-preview"><div class="thumbnail">
+                                echo '<li class="image" data-attachment_id="' . esc_attr( $attachment_id ) . '"><div class="attachment-preview"><div class="thumbnail">
                                             ' . wp_get_attachment_image( $attachment_id, 'thumbnail' ) . '</div>
-                                            <a href="#" class="wpex-gmb-remove" title="' . esc_html__( 'Remove image', 'corporate' ) . '"><div class="media-modal-icon"></div></a>
+                                            <a href="#" class="wpex-gmb-remove" title="' . esc_html__( 'Remove image', 'wpex-corporate' ) . '"><div class="media-modal-icon"></div></a>
                                         </div></li>';
                             }
                         }
@@ -89,12 +89,12 @@ if ( ! class_exists( 'WPEX_Gallery_Metabox' ) ) {
                 <?php wp_nonce_field( 'easy_image_gallery', 'easy_image_gallery' ); ?>
             </div>
             <p class="add_wpex_gallery_images hide-if-no-js">
-                <a href="#" class="button-primary"><?php esc_html_e( 'Add/Edit Images', 'corporate' ); ?></a>
+                <a href="#" class="button-primary"><?php esc_html_e( 'Add/Edit Images', 'wpex-corporate' ); ?></a>
             </p>
             <?php $checked = checked( get_post_meta( get_the_ID(), '_easy_image_gallery_link_images', true ), 'on', false ); ?>
             <p>
                 <label for="easy_image_gallery_link_images">
-                    <input type="checkbox" id="easy_image_gallery_link_images" value="on" name="easy_image_gallery_link_images"<?php echo $checked; ?> /> <?php esc_html_e( 'Enable Lightbox for this gallery?', 'corporate' )?>
+                    <input type="checkbox" id="easy_image_gallery_link_images" value="on" name="easy_image_gallery_link_images" <?php echo esc_attr( $checked ); ?> /> <?php esc_html_e( 'Enable Lightbox for this gallery?', 'wpex-corporate' )?>
                 </label>
             </p>
             <?php // Props to WooCommerce for the following JS code ?>
@@ -116,9 +116,9 @@ if ( ! class_exists( 'WPEX_Gallery_Metabox' ) ) {
                         // Create the media frame.
                         image_gallery_frame = wp.media.frames.downloadable_file = wp.media({
                             // Set the title of the modal.
-                            title: "<?php esc_html_e( 'Add Images to Gallery', 'corporate' ); ?>",
+                            title: "<?php esc_html_e( 'Add Images to Gallery', 'wpex-corporate' ); ?>",
                             button: {
-                                text: "<?php esc_html_e( 'Add to gallery', 'corporate' ); ?>",
+                                text: "<?php esc_html_e( 'Add to gallery', 'wpex-corporate' ); ?>",
                             },
                             multiple: true
                         });
@@ -135,7 +135,7 @@ if ( ! class_exists( 'WPEX_Gallery_Metabox' ) ) {
                                                 <div class="thumbnail">\
                                                     <img src="' + attachment.url + '" />\
                                                 </div>\
-                                               <a href="#" class="wpex-gmb-remove" title="<?php esc_html_e( 'Remove image', 'corporate' ); ?>"><div class="media-modal-icon"></div></a>\
+                                               <a href="#" class="wpex-gmb-remove" title="<?php esc_html_e( 'Remove image', 'wpex-corporate' ); ?>"><div class="media-modal-icon"></div></a>\
                                             </div>\
                                         </li>');
                                 }
@@ -235,8 +235,8 @@ if ( ! class_exists( 'WPEX_Gallery_Metabox' ) ) {
                 .wpex_gallery_images .image > div { width: 80px; height: 80px; box-shadow: none; }
                 .wpex_gallery_images .attachment-preview { position: relative; padding: 4px; }
                 .wpex_gallery_images .attachment-preview .thumbnail { cursor: move }    
-                .wpex_gallery_images .wc-metabox-sortable-placeholder{width: 80px;height: 80px;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;border:4px dashed #ddd;background:#f7f7f7 url("<?php echo $this->dir; ?>watermark.png") no-repeat center}      
-                .wpex_gallery_images .wpex-gmb-remove {background: #eee url("<?php echo $this->dir; ?>delete.png") center center no-repeat;position: absolute;top: 2px;right: 2px;border-radius: 2px;padding: 2px;display: none;width: 10px;height: 10px;margin: 0;display: none;overflow: hidden;} 
+                .wpex_gallery_images .wc-metabox-sortable-placeholder{width: 80px;height: 80px;box-sizing: border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;border:4px dashed #ddd;background:#f7f7f7 url("<?php echo esc_url( $this->dir ); ?>watermark.png") no-repeat center}      
+                .wpex_gallery_images .wpex-gmb-remove {background: #eee url("<?php echo esc_url( $this->dir ); ?>delete.png") center center no-repeat;position: absolute;top: 2px;right: 2px;border-radius: 2px;padding: 2px;display: none;width: 10px;height: 10px;margin: 0;display: none;overflow: hidden;} 
                 .wpex_gallery_images .image div:hover .wpex-gmb-remove { display: block }
                 .wpex_gallery_images:after, #wpex_gallery_images_container:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
                 #wpex_gallery_images_container ul { margin: 0 !important }

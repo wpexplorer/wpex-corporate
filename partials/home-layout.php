@@ -3,8 +3,8 @@
  * Homepage Layout
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -14,13 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Display homepage slides
-include( locate_template( 'partials/home-slider.php' ) );
+get_template_part( 'partials/home-slider' );
 
 // Display homepage content
 get_template_part( 'partials/home-content' );
 
 // Display homepage features
-include( locate_template( 'partials/home-features.php' ) );
+get_template_part( 'partials/home-features' );
 
 // Display homepage portfolio items
-include( locate_template( 'partials/home-portfolio.php' ) );
+get_template_part( 'partials/home-portfolio' );

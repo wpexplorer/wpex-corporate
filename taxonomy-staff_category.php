@@ -3,8 +3,8 @@
  * The template for displaying your Staff Category custom taxonomy archives.
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -29,7 +29,7 @@ get_header(); ?>
 							<?php get_template_part( 'partials/staff-entry' ); ?>
 
 						<?php if ( $wpex_count == '3' ) $wpex_count=0; ?>
-						
+
 					<?php endwhile; ?>
 
 				</div><!-- #portfolio-wrap -->

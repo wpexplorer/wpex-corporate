@@ -3,8 +3,8 @@
  * Portfolio single video
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -30,5 +30,5 @@ if ( ! $embed_code || is_wp_error( $embed_code ) ) {
 } ?>
 
 <div class="post-video wpex-video-embed clr">
-	<?php echo $embed_code; ?>
+	<?php echo wp_kses_post( $embed_code ); ?>
 </div><!-- .post-video -->

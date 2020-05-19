@@ -3,8 +3,8 @@
  * Staff single layout
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div><!-- .entry -->
 
 	<?php get_template_part( 'partials/edit-post' ); ?>
-	
+
 </article>
 
 <?php if ( get_theme_mod( 'wpex_staff_comments') ) comments_template();  ?>

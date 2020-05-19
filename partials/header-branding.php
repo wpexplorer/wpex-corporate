@@ -3,8 +3,8 @@
  * Header branding: Logo & Site Description
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -34,7 +34,7 @@ $home_url           = home_url(); ?>
             <div class="site-text-logo clr">
                 <a href="<?php echo esc_url( $home_url ); ?>" title="<?php echo esc_attr( $blog_name ); ?>" rel="home"><?php echo strip_tags( $blog_name ); ?></a>
                 <?php if ( $blog_description ) { ?>
-                    <div class="blog-description"><?php echo $blog_description; ?></div>
+                    <div class="blog-description"><?php echo wp_kses_post( $blog_description ); ?></div>
                 <?php } ?>
             </div><!-- .site-text-logo -->
 

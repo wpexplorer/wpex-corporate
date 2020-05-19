@@ -3,8 +3,8 @@
  * Homepage Slider
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -17,7 +17,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! get_theme_mod( 'wpex_homepage_slider', true ) ) {
     return;
 }
-					
+
+// Return if post type doesn't exist
+if ( ! post_type_exists( 'slides' ) ) {
+	return;
+}
+
 // Query slides
 $wpex_query = new WP_Query( array(
 	'post_type'      => 'slides',

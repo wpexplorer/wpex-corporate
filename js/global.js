@@ -53,8 +53,8 @@
 			smoothHeight		: true,
 			controlNav			: false,
 			directionNav		: true,
-			prevText			: '<span class="fa fa-caret-left"></span>',
-			nextText			: '<span class="fa fa-caret-right"></span>',
+			prevText			: '<span class="fa fa-caret-left" aria-hidden="true"></span>',
+			nextText			: '<span class="fa fa-caret-right" aria-hidden="true"></span>',
 			controlsContainer	: ".flexslider-container"
 		} );
 
@@ -65,8 +65,8 @@
 			smoothHeight		: true,
 			controlNav			: false,
 			directionNav		: true,
-			prevText			: '<span class="fa fa-caret-left"></span>',
-			nextText			: '<span class="fa fa-caret-right"></span>',
+			prevText			: '<span class="fa fa-caret-left" aria-hidden="true"></span>',
+			nextText			: '<span class="fa fa-caret-right" aria-hidden="true"></span>',
 			controlsContainer	: ".flexslider-container"
 		} );
 		

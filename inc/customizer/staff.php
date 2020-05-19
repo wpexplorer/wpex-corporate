@@ -3,8 +3,8 @@
  * Customizer Staff Settings
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -12,53 +12,50 @@ function wpex_customizer_staff( $wp_customize ) {
 
 	// Staff Section
 	$wp_customize->add_section( 'wpex_staff' , array(
-		'title'		=> esc_html__( 'Staff', 'corporate' ),
-		'priority'	=> 202,
+		'title' => esc_html__( 'Staff', 'wpex-corporate' ),
 	) );
-	
+
 	// Enable/Disable Staff
 	$wp_customize->add_setting( 'wpex_staff', array(
 		'type'			=> 'theme_mod',
 		'default'		=> '1',
-		'sanitization'	=> false,
+		'sanitize_callback'  => 'absint',
 	) );
 
 	$wp_customize->add_control( 'wpex_staff', array(
-		'label'		=> esc_html__( 'Staff Post Type', 'corporate' ),
+		'label'		=> esc_html__( 'Enable Staff', 'wpex-corporate' ),
 		'section'	=> 'wpex_staff',
 		'settings'	=> 'wpex_staff',
 		'type'		=> 'checkbox',
-		'priority'	=> '1',
+		'description' => esc_html__( 'You must save and refresh live site after changing this setting.', 'wpex-corporate' ),
 	) );
 
 	// Enable/Disable Staff Comments
 	$wp_customize->add_setting( 'wpex_staff_comments', array(
 		'type'			=> 'theme_mod',
 		'default'		=> '',
-		'sanitization'	=> false,
+		'sanitize_callback'  => 'absint',
 	) );
 
 	$wp_customize->add_control( 'wpex_staff_comments', array(
-		'label'		=> esc_html__( 'Staff Comments', 'corporate' ),
+		'label'		=> esc_html__( 'Staff Comments', 'wpex-corporate' ),
 		'section'	=> 'wpex_staff',
 		'settings'	=> 'wpex_staff_comments',
 		'type'		=> 'checkbox',
-		'priority'	=> '1',
 	) );
 
 	// Posts Per Page - Archive
 	$wp_customize->add_setting( 'wpex_staff_posts_per_page', array(
 		'type'			=> 'theme_mod',
 		'default'		=> '9',
-		'sanitization'	=> false,
+		'sanitize_callback'  => 'absint',
 	) );
-	
+
 	$wp_customize->add_control( 'wpex_staff_posts_per_page', array(
-		'label'		=> esc_html__( 'Archive Posts Per Page', 'corporate' ),
+		'label'		=> esc_html__( 'Archive Posts Per Page', 'wpex-corporate' ),
 		'section'	=> 'wpex_staff',
 		'settings'	=> 'wpex_staff_posts_per_page',
 		'type'		=> 'text',
-		'priority'	=> '2',
 	) );
 
 }

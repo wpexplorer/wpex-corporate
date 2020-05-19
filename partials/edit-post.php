@@ -3,8 +3,8 @@
  * Post edit link
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -14,5 +14,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 } ?>
 
 <footer class="entry-footer">
-	<?php edit_post_link( esc_html__( 'Edit Post', 'corporate' ), '<span class="edit-link clr">', '</span>' ); ?>
+	<?php edit_post_link( esc_html__( 'Edit Post', 'wpex-corporate' ), '<span class="edit-link clr">', '</span>' ); ?>
 </footer><!-- .entry-footer -->

@@ -223,8 +223,9 @@ class cmb_Meta_Box {
 		$dir = dirname( __FILE__ );
 
 		$file = "$dir/helpers/$class_name.php";
-		if ( file_exists( $file ) )
-			@include( $file );
+		if ( file_exists( $file ) ) {
+			require $file;
+		}
 	}
 
 	/**
@@ -255,10 +256,10 @@ class cmb_Meta_Box {
 			   wp_register_script( 'iris', admin_url( 'js/iris.min.js' ), array( 'jquery-ui-draggable', 'jquery-ui-slider', 'jquery-touch-punch' ), self::CMB_VERSION );
 		   	wp_register_script( 'wp-color-picker', admin_url( 'js/color-picker.min.js' ), array( 'iris' ), self::CMB_VERSION );
 				wp_localize_script( 'wp-color-picker', 'wpColorPickerL10n', array(
-					'clear'         => esc_html__( 'Clear', 'corporate' ),
-					'defaultString' => esc_html__( 'Default', 'corporate' ),
-					'pick'          => esc_html__( 'Select Color', 'corporate' ),
-					'current'       => esc_html__( 'Current Color', 'corporate' ),
+					'clear'         => esc_html__( 'Clear', 'wpex-corporate' ),
+					'defaultString' => esc_html__( 'Default', 'wpex-corporate' ),
+					'pick'          => esc_html__( 'Select Color', 'wpex-corporate' ),
+					'current'       => esc_html__( 'Current Color', 'wpex-corporate' ),
 				) );
 			}
 		} else {
@@ -283,8 +284,8 @@ class cmb_Meta_Box {
 			'file'            => 'File:',
 			'download'        => 'Download',
 			'ajaxurl'         => admin_url( '/admin-ajax.php' ),
-			'up_arrow'        => '[ ↑ ]&nbsp;',
-			'down_arrow'      => '&nbsp;[ ↓ ]',
+			'up_arrow'        => '[ &uarr; ]&nbsp;',
+			'down_arrow'      => '&nbsp;[ &darr; ]',
 			'check_toggle'    => esc_html__( 'Select / Deselect All', 'cmb' ),
 		) ) );
 
@@ -737,14 +738,13 @@ class cmb_Meta_Box {
 
 		$type = false;
 		// check if 'pages' is a string
-		if ( self::is_options_page_mb( $meta_box ) )
+		if ( self::is_options_page_mb( $meta_box ) ) {
 			$type = 'options-page';
-		// check if 'pages' is a string
-		elseif ( is_string( $meta_box['pages'] ) )
+		} elseif ( is_string( $meta_box['pages'] ) ) {
 			$type = $meta_box['pages'];
-		// if it's an array of one, extract it
-		elseif ( is_array( $meta_box['pages'] ) && count( $meta_box['pages'] === 1 ) )
+		} elseif ( is_array( $meta_box['pages'] ) && count( $meta_box['pages'] ) === 1 ) {
 			$type = is_string( end( $meta_box['pages'] ) ) ? end( $meta_box['pages'] ) : false;
+		}
 
 		if ( !$type )
 			return self::get_mb_type();
@@ -1176,7 +1176,7 @@ function cmb_metabox_form( $meta_box, $object_id, $echo = true ) {
 
 	$form_format = apply_filters( 'cmb_frontend_form_format', '<form class="cmb-form" method="post" id="%s" enctype="multipart/form-data" encoding="multipart/form-data"><input type="hidden" name="object_id" value="%s">%s<input type="submit" name="submit-cmb" value="%s" class="button-primary"></form>', $object_id, $meta_box, $form );
 
-	$form = sprintf( $form_format, $meta_box['id'], $object_id, $form, esc_html__( 'Save', 'corporate' ) );
+	$form = sprintf( $form_format, $meta_box['id'], $object_id, $form, __( 'Save', 'wpex-corporate' ) );
 
 	if ( $echo )
 		echo $form;

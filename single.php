@@ -3,8 +3,8 @@
  * The Template for displaying all single posts.
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -16,8 +16,8 @@ get_header(); ?>
 
 		<main id="content" class="site-content left-content clr" role="main">
 
-			<?php include( locate_template( 'partials/post-layout.php' ) ); ?>
-			
+			<?php get_template_part( 'partials/post-layout' ); ?>
+
 		</main><!-- #content -->
 
 		<?php get_sidebar(); ?>

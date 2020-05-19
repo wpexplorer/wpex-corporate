@@ -3,8 +3,8 @@
  * Portfolio single related posts
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -36,7 +36,7 @@ if ( $wpex_query->posts ) : ?>
 
 	<div id="single-portfolio-related" class="clr">
 
-		<h3 class="heading"><span><?php echo get_theme_mod( 'wpex_portfolio_related_heading', esc_html__( 'Other Work', 'corporate' ) ); ?></span></h3>
+		<h3 class="heading"><span><?php echo get_theme_mod( 'wpex_portfolio_related_heading', esc_html__( 'Other Work', 'wpex-corporate' ) ); ?></span></h3>
 
 		<div class="wpex-row clr">
 

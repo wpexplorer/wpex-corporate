@@ -3,8 +3,8 @@
  * Post single meta
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -31,18 +31,18 @@ if ( ! $author_description ) {
 
 <div class="author-info clr">
 
-	<h4 class="heading"><span><?php printf( esc_html__( 'Written by %s', 'corporate' ), $author ); ?></span></h4>
+	<h4 class="heading"><span><?php printf( esc_html__( 'Written by %s', 'wpex-corporate' ), $author ); ?></span></h4>
 
 	<div class="author-info-inner clr">
-	
+
 		<?php if ( $author_avatar ) : ?>
 			<a href="<?php echo esc_url( $author_url ); ?>" rel="author" class="author-avatar">
-				<?php echo $author_avatar; ?>
+				<?php echo wp_kses_post( $author_avatar ); ?>
 			</a>
 		<?php endif; ?>
 
 		<div class="author-description">
-			<p><?php echo $author_description; ?></p>
+			<p><?php echo wp_kses_post( $author_description ); ?></p>
 		</div><!-- .author-description -->
 
 	</div><!-- .author-info-inner -->

@@ -3,8 +3,8 @@
  * The Template for displaying your single portfolio posts
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -16,7 +16,7 @@ get_header(); ?>
 
 		<main id="content" class="site-content" role="main">
 
-			<?php include( locate_template( 'partials/portfolio-single.php' ) ); ?>
+			<?php get_template_part( 'partials/portfolio-single' ); ?>
 
 		</main><!-- #content -->
 

@@ -1,24 +1,19 @@
 /* ==================================================
- Theme Name: Corporate
- Version: 2.2.0
+ Theme Name: WPEX Corporate
+ Version: 2.3
  Description: Corporate WordPress Theme by WPExplorer
  Author: WPExplorer
- Author URI: http://www.wpexplorer.com
- Theme URI: http://www.wpexplorer.com/
- License: GNU General Public License version 2.0
- License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Author URI: https://www.wpexplorer.com/
+ Theme URI: https://www.wpexplorer.com/free-wordpress-themes/
+ License: GNU General Public License v2 or later
+ License URI: LICENSE
+ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+ Text Domain: wpex-corporate
 
 /* Reset
 ================================================== */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block }
-ol, ul { list-style: none }
-blockquote, q { quotes: none }
-:focus { outline: 0 }
-table { border-collapse: collapse; border-spacing: 0; }
-img { max-width: 100%; height: auto; }
-mark { background: none; }
-select { max-width: 100%; }
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;font:inherit;vertical-align:baseline;font-family:inherit;font-style:inherit;font-weight:inherit;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html{font-size:62.5%;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}body{background:#fff;line-height:1;}article,aside,details,figcaption,figure,footer,header,main,nav,section{display:block}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0;}caption,th,td{font-weight:normal;text-align:left;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}blockquote,q{quotes:none}a:hover,a:active{outline:0}a img{border:0}img{max-width:100%;height:auto;}select{max-width:100%}
+
 
 /* The Grid
 ================================================== */
@@ -110,7 +105,6 @@ strong { font-weight: 600; }
 .entry strong { color: #000; }
 small { font-size: 80% }
 hr { border: solid #eee; border-width: 1px 0 0; clear: both; height: 0; margin: 40px 0; }
-a { outline: 0 }
 
 /* Page Header
 ================================================== */
@@ -297,10 +291,10 @@ html[xmlns] .slides {display: block;}
 
 /* Homepage
 ================================================== */
-#homepage-slider-wrap { margin: -40px -30px 0; }
-#homepage-content { margin: 35px 0; }
+#homepage-slider-wrap { margin: -40px -30px 30px; }
+#homepage-content { margin-bottom:  35px; }
 #homepage-features,
-#homepage-portfolio { margin-bottom: 30px; }
+#homepage-portfolio { margin-bottom: 35px; }
 #homepage-content p:last-child { margin: 0; }
 #homepage-content { padding: 30px; background: #f4f4f4; border-radius: 4px; font-size: 1.3em; text-align: center; color: #000; }
 

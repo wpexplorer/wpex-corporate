@@ -1,0 +1,826 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WPEX Corporate\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-16 11:50+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: AJ Clarke <stplorer@gmail.com>\n"
+"Language-Team: WPExplorer.com\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"Lapwd-Translator: AJ Clarke <stplorer@gmail.com>\n"
+"X-Poedit-KeywordsList: esc_html_e;gettext;gettext_noop;__;_e;_n;_nx;"
+"esc_html__;esc_html_x;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: partials/portfolio-single-meta.php:28 partials/post-meta.php:33
+#: partials/entry-meta.php:33
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:50
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: partials/portfolio-single-meta.php:28 partials/post-meta.php:33
+#: partials/entry-meta.php:33
+msgid "0 Comments"
+msgstr ""
+
+#: partials/portfolio-single-meta.php:28 partials/post-meta.php:33
+#: partials/entry-meta.php:33
+msgid "1 Comment"
+msgstr ""
+
+#: inc/comments-callback.php:29
+#, php-format
+msgctxt "1: date"
+msgid "%1$s"
+msgstr ""
+
+#: 404.php:19
+msgid "404"
+msgstr ""
+
+#: inc/classes/gallery-metabox/gallery-metabox.php:119
+msgid "Add Images to Gallery"
+msgstr ""
+
+#: inc/classes/post-types/features.php:53
+#: inc/classes/post-types/features.php:55
+msgid "Add New Features Item"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:72 inc/classes/post-types/staff.php:53
+#: inc/classes/post-types/slides.php:52 inc/classes/post-types/features.php:52
+msgid "Add New Item"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:110
+msgid "Add New Portfolio Category"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:73
+#: inc/classes/post-types/portfolio.php:75
+msgid "Add New Portfolio Item"
+msgstr ""
+
+#: inc/classes/post-types/slides.php:53 inc/classes/post-types/slides.php:55
+msgid "Add New Slides Item"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:92
+msgid "Add New Staff Category"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:54 inc/classes/post-types/staff.php:56
+msgid "Add New Staff Item"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:113
+msgid "Add or remove portfolio categories"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:95
+msgid "Add or remove staff categories"
+msgstr ""
+
+#: inc/classes/gallery-metabox/gallery-metabox.php:121
+msgid "Add to gallery"
+msgstr ""
+
+#: inc/classes/gallery-metabox/gallery-metabox.php:92
+msgid "Add/Edit Images"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:105
+msgid "All Portfolio Categories"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:87
+msgid "All Staff Categories"
+msgstr ""
+
+#: inc/customizer/portfolio.php:87 inc/customizer/staff.php:57
+msgid "Archive Posts Per Page"
+msgstr ""
+
+#: partials/archive-header.php:38 inc/customizer/blog.php:15
+msgid "Blog"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:147
+#: inc/classes/post-types/staff.php:129
+msgid "Category"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:114
+msgid "Choose from the most used portfolio categories"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:96
+msgid "Choose from the most used staff categories"
+msgstr ""
+
+#: admin/about.php:166
+msgid "Choosing The Best WordPress Hosting for Your Site"
+msgstr ""
+
+#: inc/classes/custom-metaboxes-and-fields/init.php:259
+msgid "Clear"
+msgstr ""
+
+#: comments.php:49
+msgid "Comment navigation"
+msgstr ""
+
+#: inc/helpers.php:80
+msgid "continue reading"
+msgstr ""
+
+#: inc/customizer/copyright.php:15
+msgid "Copyright"
+msgstr ""
+
+#: inc/customizer/copyright.php:29
+msgid "Copyright Text"
+msgstr ""
+
+#: partials/footer-copyright.php:17 inc/customizer/copyright.php:21
+msgid "Corporate Theme"
+msgstr ""
+
+#. Description of the theme
+msgid "Corporate WordPress Theme by WPExplorer"
+msgstr ""
+
+#: inc/classes/custom-metaboxes-and-fields/init.php:262
+msgid "Current Color"
+msgstr ""
+
+#: admin/about.php:170
+msgid "Deals & Coupons for WordPress Products & Services"
+msgstr ""
+
+#: inc/classes/custom-metaboxes-and-fields/init.php:260
+msgid "Default"
+msgstr ""
+
+#: inc/comments-callback.php:10
+msgid "Edit"
+msgstr ""
+
+#: inc/classes/post-types/features.php:54
+msgid "Edit Features Item"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:108
+msgid "Edit Portfolio Category"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:74
+msgid "Edit Portfolio Item"
+msgstr ""
+
+#: partials/edit-post.php:17
+msgid "Edit Post"
+msgstr ""
+
+#: inc/classes/post-types/slides.php:54
+msgid "Edit Slides Item"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:90
+msgid "Edit Staff Category"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:55
+msgid "Edit Staff Item"
+msgstr ""
+
+#: inc/classes/gallery-metabox/gallery-metabox.php:97
+msgid "Enable Lightbox for this gallery?"
+msgstr ""
+
+#: inc/meta-config.php:43
+msgid ""
+"Enter a custom URL to link this feature to. Don't forget the http// at the "
+"front! This link will be added to the featured image and title."
+msgstr ""
+
+#: inc/meta-config.php:24
+msgid ""
+"Enter a custom URL to link this slide to. Don't forget the http// at the "
+"front!"
+msgstr ""
+
+#: inc/meta-config.php:69 inc/meta-config.php:88
+msgid ""
+"Enter in a video URL that is compatible with WordPress's built-in oEmbed "
+"feature."
+msgstr ""
+
+#: inc/meta-config.php:50
+msgid ""
+"Enter the icon font classname (without the fa- part) to display an icon "
+"instead of a featured image."
+msgstr ""
+
+#: admin/about.php:136
+msgid "Facebook"
+msgstr ""
+
+#: inc/meta-config.php:35
+msgid "Feature Settings"
+msgstr ""
+
+#: inc/customizer/blog.php:42
+msgid "Featured Image on Entries"
+msgstr ""
+
+#: inc/customizer/blog.php:57
+msgid "Featured Image on Posts"
+msgstr ""
+
+#: inc/classes/post-types/features.php:49
+msgid "Features"
+msgstr ""
+
+#: inc/classes/post-types/features.php:51
+msgid "Features Item"
+msgstr ""
+
+#: admin/dashboard-feed.php:20
+msgid "Feed From"
+msgstr ""
+
+#: functions.php:325
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:336
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:347
+msgid "Footer 3"
+msgstr ""
+
+#. Name of the template
+msgid "Fullwidth"
+msgstr ""
+
+#: inc/customizer/header.php:14
+msgid "Header"
+msgstr ""
+
+#: inc/customizer/header.php:37
+msgid "Header Search"
+msgstr ""
+
+#: inc/classes/post-types/features.php:50
+msgid "Home Features"
+msgstr ""
+
+#: inc/classes/post-types/slides.php:50
+msgid "Home Slides"
+msgstr ""
+
+#. Name of the template
+msgid "Homepage"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://www.wpexplorer.com/"
+msgstr ""
+
+#. URI of the theme
+msgid "https://www.wpexplorer.com/free-wordpress-themes/"
+msgstr ""
+
+#: inc/meta-config.php:49
+msgid "Icon Font Class"
+msgstr ""
+
+#. ID
+#: inc/classes/gallery-metabox/gallery-metabox.php:56
+msgid "Image Gallery"
+msgstr ""
+
+#: inc/customizer/header.php:24
+msgid "Image Logo"
+msgstr ""
+
+#: admin/about.php:168
+msgid "Improve your WordPress Site Security"
+msgstr ""
+
+#: partials/none.php:24
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr ""
+
+#: inc/meta-config.php:69 inc/meta-config.php:88
+msgid "Learn More"
+msgstr ""
+
+#: inc/meta-config.php:50
+msgid "Learn More."
+msgstr ""
+
+#: functions.php:187
+msgid "Main"
+msgstr ""
+
+#: partials/nav-main.php:21
+msgid "Menu"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:111
+msgid "New Portfolio Category Name"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:93
+msgid "New Staff Category Name"
+msgstr ""
+
+#: comments.php:51
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: inc/helpers.php:169
+msgid "Newer Posts"
+msgstr ""
+
+#: inc/classes/post-types/features.php:58
+msgid "No features items found"
+msgstr ""
+
+#: inc/classes/post-types/features.php:59
+msgid "No features items found in trash"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:78
+msgid "No portfolio items found"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:79
+msgid "No portfolio items found in trash"
+msgstr ""
+
+#: inc/classes/post-types/slides.php:58
+msgid "No slides items found"
+msgstr ""
+
+#: inc/classes/post-types/slides.php:59
+msgid "No slides items found in trash"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:59
+msgid "No staff items found"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:60
+msgid "No staff items found in trash"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:167
+msgid "None"
+msgstr ""
+
+#: inc/helpers.php:171
+msgid "Older Posts"
+msgstr ""
+
+#: partials/portfolio-single-related.php:39
+msgid "Other Work"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:106
+msgid "Parent Portfolio Category"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:107
+msgid "Parent Portfolio Category:"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:88
+msgid "Parent Staff Category"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:89
+msgid "Parent Staff Category:"
+msgstr ""
+
+#: inc/comments-callback.php:10
+msgid "Pingback:"
+msgstr ""
+
+#: searchform.php:13
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:104
+msgid "Popular Portfolio Categories"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:86
+msgid "Popular Staff Categories"
+msgstr ""
+
+#. Name of the template
+#: inc/customizer/portfolio.php:15 inc/classes/post-types/portfolio.php:70
+msgid "Portfolio"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:101
+#: inc/classes/post-types/portfolio.php:115
+msgid "Portfolio Categories"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:102
+msgid "Portfolio Category"
+msgstr ""
+
+#: inc/customizer/portfolio.php:42
+msgid "Portfolio Comments"
+msgstr ""
+
+#: inc/customizer/portfolio.php:72
+msgid "Portfolio Homepage Posts Per Page"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:71
+msgid "Portfolio Item"
+msgstr ""
+
+#: inc/customizer/portfolio.php:27
+msgid "Portfolio Post Type"
+msgstr ""
+
+#: inc/customizer/portfolio.php:57
+msgid "Portfolio Related"
+msgstr ""
+
+#: inc/meta-config.php:61 inc/meta-config.php:80
+msgid "Post Settings"
+msgstr ""
+
+#: partials/portfolio-single-meta.php:18 partials/post-meta.php:19
+#: partials/entry-meta.php:19
+msgid "Posted on"
+msgstr ""
+
+#: partials/footer-copyright.php:17 inc/customizer/copyright.php:21
+msgid "Powered by"
+msgstr ""
+
+#: inc/customizer/blog.php:27
+msgid "Read More Link"
+msgstr ""
+
+#: partials/none.php:14
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: partials/home-portfolio.php:34
+msgid "Recent Work"
+msgstr ""
+
+#: inc/classes/gallery-metabox/gallery-metabox.php:82
+#: inc/classes/gallery-metabox/gallery-metabox.php:138
+msgid "Remove image"
+msgstr ""
+
+#: inc/comments-callback.php:35
+msgid "Reply"
+msgstr ""
+
+#: inc/classes/custom-metaboxes-and-fields/init.php:1179
+msgid "Save"
+msgstr ""
+
+#: inc/classes/post-types/features.php:57
+msgid "Search Features"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:77
+msgid "Search Portfolio"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:103
+msgid "Search Portfolio Categories"
+msgstr ""
+
+#: partials/archive-header.php:29
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/classes/post-types/slides.php:57
+msgid "Search Slides"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:58
+msgid "Search Staff"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:85
+msgid "Search Staff Categories"
+msgstr ""
+
+#: inc/classes/custom-metaboxes-and-fields/init.php:261
+msgid "Select Color"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:112
+msgid "Separate portfolio categories with commas"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:94
+msgid "Separate staff categories with commas"
+msgstr ""
+
+#: functions.php:314
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr ""
+
+#: inc/meta-config.php:16
+msgid "Slide Settings"
+msgstr ""
+
+#: inc/classes/post-types/slides.php:49
+msgid "Slides"
+msgstr ""
+
+#: inc/classes/post-types/slides.php:51
+msgid "Slides Item"
+msgstr ""
+
+#: partials/none.php:16
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with "
+"different keywords."
+msgstr ""
+
+#: admin/about.php:169
+msgid "Speed Up Your WordPress Site"
+msgstr ""
+
+#. Name of the template
+#: inc/customizer/staff.php:15 inc/classes/post-types/staff.php:51
+msgid "Staff"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:83 inc/classes/post-types/staff.php:97
+msgid "Staff Categories"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:84
+msgid "Staff Category"
+msgstr ""
+
+#: inc/customizer/staff.php:42
+msgid "Staff Comments"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:52
+msgid "Staff Item"
+msgstr ""
+
+#: inc/customizer/staff.php:27
+msgid "Staff Post Type"
+msgstr ""
+
+#: admin/about.php:132
+msgctxt "theme about page"
+msgid ""
+"A back-link to our website is very much appreciated or you can follow us via "
+"our social media!"
+msgstr ""
+
+#: admin/about.php:114
+msgctxt "theme about page"
+msgid "A free WordPress theme by WPExplorer"
+msgstr ""
+
+#: admin/about.php:118
+msgctxt "theme about page"
+msgid "About"
+msgstr ""
+
+#: admin/about.php:147
+msgctxt "theme about page"
+msgid ""
+"Below you will find some useful links to get you started with this theme."
+msgstr ""
+
+#: admin/about.php:180
+msgctxt "theme about page"
+msgid ""
+"Check out our most advanced (yet easy to use) and flexible theme to date."
+msgstr ""
+
+#: admin/about.php:188
+msgctxt "theme about page"
+msgid ""
+"Click the link below to disable this about page completely and never see it "
+"again."
+msgstr ""
+
+#: admin/about.php:126
+msgctxt "theme about page"
+msgid "Credits"
+msgstr ""
+
+#: admin/about.php:157
+msgctxt "theme about page"
+msgid "Customize Your Site"
+msgstr ""
+
+#: admin/about.php:187 admin/about.php:189
+msgctxt "theme about page"
+msgid "Disable This Page"
+msgstr ""
+
+#: admin/about.php:143
+msgctxt "theme about page"
+msgid "Getting Started"
+msgstr ""
+
+#: admin/about.php:121
+msgctxt "theme about page"
+msgid "GPL License"
+msgstr ""
+
+#: admin/about.php:114
+msgctxt "theme about page"
+msgid "Report a Bug"
+msgstr ""
+
+#: admin/about.php:114
+msgctxt "theme about page"
+msgid "Theme Details"
+msgstr ""
+
+#: admin/about.php:122
+msgctxt "theme about page"
+msgid ""
+"This theme is licensed under the GPL license. This means you can use it for "
+"anything you like as long as it remains GPL."
+msgstr ""
+
+#: admin/about.php:128
+msgctxt "theme about page"
+msgid "This theme was created by:"
+msgstr ""
+
+#: admin/about.php:177
+msgctxt "theme about page"
+msgid "Total Drag & Drop Theme"
+msgstr ""
+
+#: admin/about.php:162
+msgctxt "theme about page"
+msgid "Useful Links"
+msgstr ""
+
+#: admin/about.php:130
+msgctxt "theme about page"
+msgid "We work hard to develop, support and update this theme."
+msgstr ""
+
+#: partials/none.php:18
+msgid "There aren't any posts currently published in this category."
+msgstr ""
+
+#: partials/none.php:22
+msgid "There aren't any posts currently published under this tag."
+msgstr ""
+
+#: partials/none.php:20
+msgid "There aren't any posts currently published under this taxonomy."
+msgstr ""
+
+#: comments.php:36
+#, php-format
+msgid "This article has %s comments"
+msgstr ""
+
+#: comments.php:34
+msgid "This article has 1 comment"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:146
+#: inc/classes/post-types/staff.php:128 inc/classes/post-types/slides.php:92
+#: inc/classes/post-types/features.php:91
+msgid "Thumbnail"
+msgstr ""
+
+#: inc/classes/post-types/slides.php:91 inc/classes/post-types/features.php:90
+msgid "Title"
+msgstr ""
+
+#: admin/about.php:135
+msgid "Twitter"
+msgstr ""
+
+#: partials/portfolio-single-meta.php:22 partials/post-meta.php:25
+#: partials/entry-meta.php:25
+msgid "Under"
+msgstr ""
+
+#: 404.php:22
+msgid "Unfortunately, the page you tried accessing could not be retrieved."
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:109
+msgid "Update Portfolio Category"
+msgstr ""
+
+#: inc/classes/post-types/staff.php:91
+msgid "Update Staff Category"
+msgstr ""
+
+#: inc/meta-config.php:23 inc/meta-config.php:42
+msgid "URL"
+msgstr ""
+
+#: inc/meta-config.php:68 inc/meta-config.php:87
+msgid "Video URL"
+msgstr ""
+
+#: inc/classes/post-types/portfolio.php:76 inc/classes/post-types/staff.php:57
+#: inc/classes/post-types/slides.php:56 inc/classes/post-types/features.php:56
+msgid "View Item"
+msgstr ""
+
+#: functions.php:327
+msgid "Widgets in this area are used in the first footer region."
+msgstr ""
+
+#: functions.php:338
+msgid "Widgets in this area are used in the second footer region."
+msgstr ""
+
+#: functions.php:316
+msgid "Widgets in this area are used in the sidebar region."
+msgstr ""
+
+#: functions.php:349
+msgid "Widgets in this area are used in the third footer region."
+msgstr ""
+
+#: partials/portfolio-single-meta.php:27 partials/post-meta.php:32
+#: partials/entry-meta.php:32
+msgid "With"
+msgstr ""
+
+#: partials/footer-copyright.php:17 inc/customizer/copyright.php:21
+msgid "WordPress"
+msgstr ""
+
+#: admin/dashboard-feed.php:9
+msgid "WordPress Articles"
+msgstr ""
+
+#: admin/about.php:167
+msgid "WordPress SEO Guide"
+msgstr ""
+
+#: partials/footer-copyright.php:17 inc/customizer/copyright.php:21
+msgid "WP Explore"
+msgstr ""
+
+#. Name of the theme
+msgid "WPEX Corporate"
+msgstr ""
+
+#. Author of the theme
+#: admin/about.php:128
+msgid "WPExplorer"
+msgstr ""
+
+#: partials/post-author-bio.php:34
+#, php-format
+msgid "Written by %s"
+msgstr ""
+
+#: inc/comments-callback.php:39
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: admin/about.php:137
+msgid "Youtube"
+msgstr ""

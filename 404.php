@@ -3,8 +3,8 @@
  * The template for displaying 404 pages (Not Found).
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -14,12 +14,12 @@ get_header(); ?>
 
 		<main id="content" class="site-content clr" role="main">
 
-			<div id="error-page" class="clr">	
+			<div id="error-page" class="clr">
 
-				<h1 id="error-page-title">404</h1>	
-						
+				<h1 id="error-page-title"><?php echo esc_html__( '404', 'wpex-corporate' ); ?></h1>
+
 				<p id="error-page-text">
-					<?php esc_html_e( 'Unfortunately, the page you tried accessing could not be retrieved.', 'corporate' ); ?>
+					<?php esc_html_e( 'Unfortunately, the page you tried accessing could not be retrieved.', 'wpex-corporate' ); ?>
 				</p>
 
 			</div><!-- #error-page -->

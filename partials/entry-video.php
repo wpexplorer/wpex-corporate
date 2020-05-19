@@ -25,5 +25,5 @@ if ( ! $video ) {
 <div class="loop-entry-video wpex-video-embed clr">
 	<?php
 	// Display video
-	echo $video; ?>
+	echo wp_kses_post( $video ); ?>
 </div><!-- .loop-entry-video -->

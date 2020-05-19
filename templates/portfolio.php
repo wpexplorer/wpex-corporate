@@ -3,8 +3,8 @@
  * Template Name: Portfolio
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -21,14 +21,12 @@ get_header(); ?>
 			<?php
 			// Query portfolio posts
 			global $post, $paged;
-			$paged			= get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
-			$wpex_query		= new WP_Query(
-				array(
-					'post_type'			=> 'portfolio',
-					'posts_per_page'	=> get_theme_mod( 'wpex_portfolio_posts_per_page', '12' ),
-					'paged'				=> $paged
-				)
-			);
+			$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+			$wpex_query = new WP_Query( array(
+				'post_type'      => 'portfolio',
+				'posts_per_page' => get_theme_mod( 'wpex_portfolio_posts_per_page', '12' ),
+				'paged'          => $paged
+			) );
 			// If portfolio posts are found lets loop through them
 			if ( $wpex_query->posts ) : ?>
 

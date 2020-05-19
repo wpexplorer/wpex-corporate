@@ -3,8 +3,8 @@
  * Portfolio single layout
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -20,5 +20,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php get_template_part( 'partials/link-pages' ); ?>
 	<?php get_template_part( 'partials/edit-post' ); ?>
 	<?php if ( get_theme_mod( 'wpex_portfolio_comments') ) comments_template(); ?>
-	<?php include( locate_template( 'partials/portfolio-single-related.php' ) ); ?>
+	<?php get_template_part( 'partials/portfolio-single-related' ); ?>
 </article><!-- .clr -->

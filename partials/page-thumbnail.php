@@ -3,8 +3,8 @@
  * Displays the page thumbnail
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -19,5 +19,5 @@ if ( ! has_post_thumbnail() ) {
 } ?>
 
 <div class="page-thumbnail clr">
-	<?php the_post_thumbnail( 'wpex-page-thumbnail', array( 'alt' => wpex_get_esc_title(), ) ); ?>
+	<?php the_post_thumbnail( 'wpex-page-thumbnail', array( 'alt' => wpex_get_esc_title() ) ); ?>
 </div><!-- .page-thumbnail -->

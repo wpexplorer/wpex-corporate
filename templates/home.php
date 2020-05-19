@@ -3,8 +3,8 @@
  * Template Name: Homepage
  *
  * @package Corporate WordPress theme
- * @author Alexander Clarke
- * @link http://www.wpexplorer.com
+ * @author WPExplorer.com
+ * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
 
@@ -18,8 +18,8 @@ get_header(); ?>
 
 				<article class="homepage-wrap clr">
 
-					<?php include( locate_template( 'partials/home-layout.php' ) ); ?>
-					
+					<?php get_template_part( 'partials/home-layout' ); ?>
+
 				</article><!-- #post -->
 
 			<?php endwhile; ?>
@@ -27,5 +27,5 @@ get_header(); ?>
 		</main><!-- #content -->
 
 	</div><!-- #primary -->
-	
+
 <?php get_footer(); ?>
