@@ -8,10 +8,7 @@
  * @since 1.0.0
  */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 // Vars
 $logo_img           = get_theme_mod('wpex_logo');

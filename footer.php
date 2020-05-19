@@ -7,6 +7,8 @@
  * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 
 	<div id="footer-wrap" class="site-footer clr">

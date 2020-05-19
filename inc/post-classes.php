@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 if ( ! function_exists( 'wpex_post_entry_classes' ) ) {
 
 	function wpex_post_entry_classes( $classes ) {

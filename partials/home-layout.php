@@ -8,10 +8,7 @@
  * @since 1.0.0
  */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 // Display homepage slides
 get_template_part( 'partials/home-slider' );

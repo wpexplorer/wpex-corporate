@@ -1,8 +1,5 @@
 <?php
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 // Check if disabled
 if ( get_option( 'wpex_disable_theme_about', false ) ) {

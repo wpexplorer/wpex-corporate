@@ -21,6 +21,8 @@
  * @since 1.0.0
  */
 
+defined( 'ABSPATH' ) || exit;
+
 function wpex_theme_info() {
 	return array(
 		'name'    => 'WPEX Corporate',
@@ -252,18 +254,14 @@ class WPEX_Theme_Class {
 			false,
 			WPEX_THEME_VERSION
 		);
-		wp_enqueue_style(
-			'wpex-responsive',
-			get_theme_file_uri( '/css/responsive.css' ),
-			array( 'wpex-style' ),
-			WPEX_THEME_VERSION
-		);
+
 		wp_enqueue_style(
 			'wpex-font-awesome',
 			get_theme_file_uri( '/css/font-awesome.min.css' ),
 			false,
 			'4.3.0'
 		);
+		
 		wp_enqueue_style(
 			'google-font-montserrat',
 			'http://fonts.googleapis.com/css?family=Montserrat:400,700',

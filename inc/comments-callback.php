@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 if ( ! function_exists( 'wpex_comment' ) ) {
 	function wpex_comment( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;

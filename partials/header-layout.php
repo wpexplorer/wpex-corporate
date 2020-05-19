@@ -11,9 +11,17 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
-} ?>
+}
 
-<div id="header-wrap" class="clr">
+$header_class = 'clr';
+
+if ( get_theme_mod( 'wpex_header_center', false ) ) {
+	$header_class .= ' header-centered';
+}
+
+?>
+
+<div id="header-wrap" class="<?php echo esc_attr( $header_class ); ?>">
 
     <header id="header" class="site-header clr" role="banner">
 

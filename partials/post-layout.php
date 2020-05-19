@@ -7,8 +7,9 @@
  * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
-?>
 
+defined( 'ABSPATH' ) || exit;
+?>
 
 <article>
 	<?php get_template_part( 'partials/post-media' ); ?>

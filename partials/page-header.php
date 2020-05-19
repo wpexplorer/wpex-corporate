@@ -8,10 +8,7 @@
  * @since 1.0.0
  */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 // Not needed on the front-page
 if ( is_front_page() ) {

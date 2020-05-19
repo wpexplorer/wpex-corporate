@@ -8,6 +8,8 @@
  * @since 1.0.0
  */
 
+defined( 'ABSPATH' ) || exit;
+
 get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>

@@ -7,6 +7,8 @@
  * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <form method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

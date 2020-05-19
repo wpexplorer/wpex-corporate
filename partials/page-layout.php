@@ -8,10 +8,8 @@
  * @since 1.0.0
  */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+defined( 'ABSPATH' ) || exit;
+
 // Get page thumbnail
 get_template_part( 'partials/page-thumbnail' );
 

@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Customizer Header Settings
  *
@@ -14,6 +16,7 @@ function wpex_customizer_general( $wp_customize ) {
 		'title' => esc_html__( 'Header', 'wpex-corporate' ),
 	) );
 
+	// Logo
 	$wp_customize->add_setting( 'wpex_logo', array(
 		'type' => 'theme_mod',
 		'sanitize_callback'  => 'esc_url',
@@ -25,6 +28,7 @@ function wpex_customizer_general( $wp_customize ) {
 		'settings' => 'wpex_logo',
 	) ) );
 
+	// Search
 	$wp_customize->add_setting( 'wpex_header_search', array(
 		'type' => 'theme_mod',
 		'default' => true,
@@ -35,6 +39,20 @@ function wpex_customizer_general( $wp_customize ) {
 		'label' => esc_html__( 'Header Search', 'wpex-corporate' ),
 		'section' => 'wpex_header_section',
 		'settings' => 'wpex_header_search',
+		'type' => 'checkbox',
+	) );
+
+	// Center
+	$wp_customize->add_setting( 'wpex_header_center', array(
+		'type' => 'theme_mod',
+		'default' => false,
+		'sanitize_callback'  => 'absint',
+	) );
+
+	$wp_customize->add_control( 'wpex_header_center', array(
+		'label' => esc_html__( 'Center Header', 'wpex-corporate' ),
+		'section' => 'wpex_header_section',
+		'settings' => 'wpex_header_center',
 		'type' => 'checkbox',
 	) );
 

@@ -1,5 +1,5 @@
 <?php
-
+defined( 'ABSPATH' ) || exit;
 /**
  * CMB ajax methods
  * (i.e. a lot of work to get oEmbeds to work with non-post objects)

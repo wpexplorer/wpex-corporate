@@ -12,10 +12,7 @@
  * @link        https://github.com/wpexplorer/gallery-metabox
  */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-    exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 // Start Class
 if ( ! class_exists( 'WPEX_Gallery_Metabox' ) ) {

@@ -9,6 +9,8 @@
  * @since       2.0.0
  */
 
+defined( 'ABSPATH' ) || exit;
+
 if ( ! class_exists( 'WPEX_Staff_Post_Type' ) ) {
 
 	class WPEX_Staff_Post_Type {

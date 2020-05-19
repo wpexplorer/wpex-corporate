@@ -8,6 +8,8 @@
  * @since 1.0.0
  */
 
+defined( 'ABSPATH' ) || exit;
+
 if ( is_active_sidebar( 'sidebar' ) ) : ?>
 
 	<aside id="secondary" class="sidebar-container" role="complementary">

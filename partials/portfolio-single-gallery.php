@@ -8,10 +8,7 @@
  * @since 1.0.0
  */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 // Get gallery image ids
 $attachments = wpex_get_gallery_ids();

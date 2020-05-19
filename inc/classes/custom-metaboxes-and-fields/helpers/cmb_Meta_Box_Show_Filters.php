@@ -1,5 +1,5 @@
 <?php
-
+defined( 'ABSPATH' ) || exit;
 /**
  * Show On Filters
  * Use the 'cmb_show_on' filter to further refine the conditions under which a metabox is displayed.

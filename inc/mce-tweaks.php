@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 // Enable font size buttons in the editor
 if ( ! function_exists( 'wpex_fontsizeselect_mce' ) ) {
 	function wpex_fontsizeselect_mce( $buttons ) {

@@ -7,6 +7,8 @@
  * @link https://www.wpexplorer.com
  * @since 1.0.0
  */
+defined( 'ABSPATH' ) || exit;
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 

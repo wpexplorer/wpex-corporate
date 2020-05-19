@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 /*
 Script Name:  Custom Metaboxes and Fields
 Contributors: WebDevStudios (@webdevstudios / webdevstudios.com)

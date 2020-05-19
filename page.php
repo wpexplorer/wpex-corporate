@@ -12,6 +12,8 @@
  * @since 1.0.0
  */
 
+defined( 'ABSPATH' ) || exit;
+
 get_header(); ?>
 
 	<div id="primary" class="content-area clr">

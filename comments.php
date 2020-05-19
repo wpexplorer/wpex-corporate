@@ -12,6 +12,7 @@
  * @since 1.0.0
  */
 
+defined( 'ABSPATH' ) || exit;
 
 // Bail if password protected and user hasn't entered password
 if ( post_password_required() ) {

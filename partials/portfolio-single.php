@@ -8,10 +8,9 @@
  * @since 1.0.0
  */
 
-// Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-} ?>
+defined( 'ABSPATH' ) || exit;
+
+?>
 
 <article class="clr">
 	<?php get_template_part( 'partials/portfolio-single-media' ); ?>
