@@ -1,6 +1,6 @@
 <?php
 /**
- * Displays the page thumbnail
+ * Portfolio single video
  *
  * @package Corporate WordPress theme
  * @author WPExplorer.com
@@ -10,11 +10,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-// Return if there isn't a thumbnail defined
 if ( ! has_post_thumbnail() ) {
 	return;
 } ?>
 
-<div class="page-thumbnail clr">
-	<?php the_post_thumbnail( 'wpex-page-thumbnail' ); ?>
-</div><!-- .page-thumbnail -->
+<div class="post-thumbnail clr">
+	<?php the_post_thumbnail( 'wpex-portfolio-post' ); ?>
+</div><!-- .post-thumbnail -->

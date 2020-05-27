@@ -23,4 +23,6 @@ if ( 'gallery' == $format ) {
 	get_template_part( 'partials/portfolio-single-gallery' );
 } elseif ( 'video' == $format ) {
 	get_template_part( 'partials/portfolio-single-video' );
+} else {
+	get_template_part( 'partials/portfolio-single-thumbnail' );
 }

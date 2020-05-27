@@ -1,6 +1,6 @@
 /* ==================================================
  Theme Name: WPEX Corporate
- Version: 2.3
+ Version: 2.3.1
  Description: Corporate WordPress Theme by WPExplorer
  Author: WPExplorer
  Author URI: https://www.wpexplorer.com/
@@ -332,7 +332,8 @@ html[xmlns] .slides {display: block;}
 .portfolio-entry .overlayparent:hover .overlay { visibility: visible; opacity: 0.75; }
 .portfolio-entry .overlay h3 { color: #fff; margin: 30px 30px 0; font-weight: 400; }
 .single-portfolio .post-slider-wrap,
-.single-portfolio .post-video { margin: -40px -30px 30px; }
+.single-portfolio .post-video,
+.single-portfolio .post-thumbnail { margin: -40px -30px 30px; }
 
 /* Staff
 ================================================== */
@@ -472,8 +473,7 @@ p.logged-in-as { margin-bottom: 60px }
 #img-attch-page img { display: inline-block; margin: 0 auto; margin-bottom: 20px; max-width: 100%; }
 
 /*gallery*/
-.gallery { margin: 0 0 30px !important; }
-.gallery-icon img { border: none !important; }
+.gallery-icon img { border: none !important; vertical-align: middle; padding: 8px; }
 .gallery-caption { text-align: center; }
 
 /* Text meant only for screen readers. */
