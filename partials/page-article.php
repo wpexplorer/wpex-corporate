@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<article class="entry clr">
+<article class="post-content entry clr">
 
 	<?php the_content(); ?>
 

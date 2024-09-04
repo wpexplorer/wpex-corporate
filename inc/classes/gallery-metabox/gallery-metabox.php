@@ -88,19 +88,13 @@ if ( ! class_exists( 'WPEX_Gallery_Metabox' ) ) {
             <p class="add_wpex_gallery_images hide-if-no-js">
                 <a href="#" class="button-primary"><?php esc_html_e( 'Add/Edit Images', 'wpex-corporate' ); ?></a>
             </p>
-            <?php $checked = checked( get_post_meta( get_the_ID(), '_easy_image_gallery_link_images', true ), 'on', false ); ?>
-            <p>
-                <label for="easy_image_gallery_link_images">
-                    <input type="checkbox" id="easy_image_gallery_link_images" value="on" name="easy_image_gallery_link_images" <?php echo esc_attr( $checked ); ?> /> <?php esc_html_e( 'Enable Lightbox for this gallery?', 'wpex-corporate' )?>
-                </label>
-            </p>
             <?php // Props to WooCommerce for the following JS code ?>
             <script type="text/javascript">
                 jQuery(document).ready(function($){
                     // Uploading files
                     var image_gallery_frame;
                     var $image_gallery_ids  = $( '#image_gallery' );
-                    var $wpex_gallery_images    = $( '#wpex_gallery_images_container ul.wpex_gallery_images' );
+                    var $wpex_gallery_images = $( '#wpex_gallery_images_container ul.wpex_gallery_images' );
                     jQuery( '.add_wpex_gallery_images' ).on( 'click', 'a', function( event ) {
                         var $el = $(this);
                         var attachment_ids = $image_gallery_ids.val();
@@ -216,12 +210,6 @@ if ( ! class_exists( 'WPEX_Gallery_Metabox' ) ) {
                 // Delete gallery
                 delete_post_meta( $post_id, '_easy_image_gallery' );
             }
-            // link to larger images
-            if ( isset( $_POST[ 'easy_image_gallery_link_images' ] ) ) {
-                update_post_meta( $post_id, '_easy_image_gallery_link_images', $_POST[ 'easy_image_gallery_link_images' ] );
-            } else {
-                update_post_meta( $post_id, '_easy_image_gallery_link_images', 'off' );
-            }
             // Add action
             do_action( 'wpex_save_gallery_metabox', $post_id );
         }
@@ -251,7 +239,6 @@ if ( is_admin() ) {
     $wpex_gallery_metabox = new WPEX_Gallery_Metabox;
 }
 
-
 /**
  * Retrieve attachment IDs
  *
@@ -262,6 +249,7 @@ if ( ! function_exists ( 'wpex_get_gallery_ids' ) ) {
     function wpex_get_gallery_ids() {
         $attachment_ids = get_post_meta( get_the_ID(), '_easy_image_gallery', true );
         $attachment_ids = explode( ',', $attachment_ids );
+        $attachment_ids = array_filter( $attachment_ids, 'wp_attachment_is_image' );
         return array_filter( $attachment_ids );
     }
 }
@@ -296,19 +284,5 @@ if ( ! function_exists ( 'wpex_gallery_count' ) ) {
     function wpex_gallery_count() {
         $ids = wpex_get_gallery_ids();
         return count( $ids );
-    }
-}
-
-/**
- * Check if lightbox is enabled
- *
- * @since   1.0.0
- * @return  bool
- */
-if ( ! function_exists ( 'wpex_gallery_is_lightbox_enabled' ) ) {
-    function wpex_gallery_is_lightbox_enabled() {
-        if ( 'on' == get_post_meta( get_the_ID(), '_easy_image_gallery_link_images', true ) ) {
-            return true;
-        }
     }
 }

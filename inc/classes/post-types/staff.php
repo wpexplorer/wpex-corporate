@@ -64,13 +64,14 @@ if ( ! class_exists( 'WPEX_Staff_Post_Type' ) ) {
 
 			// Define post type args
 			$args = array(
-				'labels'			=> $labels,
-				'public'			=> true,
-				'supports'			=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'custom-fields', 'revisions' ),
-				'capability_type'	=> 'post',
-				'rewrite'			=> array("slug" => "staff-member"), // Permalinks format
-				'has_archive'		=> false,
-				'menu_icon'			=> 'dashicons-groups',
+				'labels'			 => $labels,
+				'public'			 => true,
+				'publicly_queryable' => false,
+				'supports'			 => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'custom-fields', 'revisions' ),
+				'capability_type'	 => 'post',
+				'rewrite'			 => array("slug" => "staff-member"), // Permalinks format
+				'has_archive'		 => false,
+				'menu_icon'			 => 'dashicons-groups',
 			);
 
 			// Apply filters for child theming

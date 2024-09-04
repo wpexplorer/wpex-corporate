@@ -28,7 +28,11 @@ $wpex_query = new WP_Query( array(
 ) );
 
 // Display slides if we find some
-if ( $wpex_query->posts ) : ?>
+if ( $wpex_query->posts ) :
+
+wp_enqueue_script( 'wpex-home-slider' );
+
+?>
 
 	<div id="homepage-slider-wrap" class="clr flexslider-container">
 

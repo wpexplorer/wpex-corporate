@@ -63,13 +63,14 @@ if ( ! class_exists( 'WPEX_Slides_Post_Type' ) ) {
 
 			// Define post type args
 			$args = array(
-				'labels'			=> $labels,
-				'public'			=> true,
-				'supports'			=> array( 'title', 'thumbnail', 'custom-fields' ),
-				'capability_type'	=> 'post',
-				'rewrite'			=> array("slug" => "slides"), // Permalinks format
-				'has_archive'		=> false,
-				'menu_icon'			=> 'dashicons-images-alt2',
+				'labels'			  => $labels,
+				'public'			  => true,
+				'publicly_queryable'  => false,
+				'supports'			  => array( 'title', 'thumbnail', 'custom-fields' ),
+				'capability_type'	  => 'post',
+				'rewrite'			  => array("slug" => "slides"), // Permalinks format
+				'has_archive'		  => false,
+				'menu_icon'			  => 'dashicons-images-alt2',
 			);
 
 			// Apply filters for child theming

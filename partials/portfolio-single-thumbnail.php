@@ -1,6 +1,6 @@
 <?php
 /**
- * Portfolio single video
+ * Portfolio single thumbnail.
  *
  * @package Corporate WordPress theme
  * @author WPExplorer.com
@@ -12,7 +12,9 @@ defined( 'ABSPATH' ) || exit;
 
 if ( ! has_post_thumbnail() ) {
 	return;
-} ?>
+}
+
+?>
 
 <div class="post-thumbnail clr">
 	<?php the_post_thumbnail( 'wpex-portfolio-post' ); ?>

@@ -24,7 +24,7 @@ function wpex_customizer_copyright( $wp_customize ) {
 
 	// Add control
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wpex_copyright', array(
-		'label'    => esc_html__( 'Copyright Text', 'wpex-corporate' ),
+		'label'    => esc_html__( 'Custom Copyright Text', 'wpex-corporate' ),
 		'section'  => 'wpex_copyright',
 		'settings' => 'wpex_copyright',
 		'type'     => 'textarea'

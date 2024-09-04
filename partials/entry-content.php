@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 	}
 	// Display custom excerpt
 	else {
-		wpex_excerpt( 93, get_theme_mod( 'wpex_blog_readmore', true ) );
+		wpex_excerpt( 35, get_theme_mod( 'wpex_blog_readmore', true ) );
 	} ?>
 
 </div><!-- .loop-entry-content -->

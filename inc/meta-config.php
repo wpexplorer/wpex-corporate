@@ -71,44 +71,6 @@ function wpex_metaboxes( array $meta_boxes ) {
 		),
 	);
 
-	// Posts
-	$meta_boxes[] = array(
-		'id'			=> 'wpex-post-meta',
-		'title'			=> esc_html__( 'Post Settings', 'wpex-corporate' ),
-		'pages'			=> array( 'post' ),
-		'context'		=> 'normal',
-		'priority'		=> 'high',
-		'show_names'	=> true,
-		'fields'		=> array(
-			array(
-				'name'	=> esc_html__( 'Video URL', 'wpex-corporate' ),
-				'desc'	=> esc_html__( 'Enter in a video URL that is compatible with WordPress\'s built-in oEmbed feature.', 'wpex-corporate' ) .' <a href="http://codex.wordpress.org/Embeds" target="_blank">'. esc_html__( 'Learn More', 'wpex-corporate' ),
-				'id' 	=> $prefix . 'post_video',
-				'type'	=> 'text',
-				'std'	=> '',
-			),
-		),
-	);
-
-	// Portfolio
-	$meta_boxes[] = array(
-		'id'			=> 'wpex-portfolio-meta',
-		'title'			=> esc_html__( 'Post Settings', 'wpex-corporate' ),
-		'pages'			=> array( 'portfolio' ),
-		'context'		=> 'normal',
-		'priority'		=> 'high',
-		'show_names'	=> true,
-		'fields'		=> array(
-			array(
-				'name'	=> esc_html__( 'Video URL', 'wpex-corporate' ),
-				'desc'	=>  esc_html__( 'Enter in a video URL that is compatible with WordPress\'s built-in oEmbed feature.', 'wpex-corporate' ) .' <a href="http://codex.wordpress.org/Embeds" target="_blank">'. esc_html__( 'Learn More', 'wpex-corporate' ),
-				'id'	=> $prefix . 'post_video',
-				'type'	=> 'text',
-				'std'	=> ''
-			),
-		),
-	);
-
 	return $meta_boxes;
 }
 add_filter( 'cmb_meta_boxes', 'wpex_metaboxes' );

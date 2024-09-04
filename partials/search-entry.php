@@ -38,7 +38,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<div class="search-entry-content entry clr">
 
-			<?php wpex_excerpt( 50 ); ?>
+			<?php wpex_excerpt( 25 ); ?>
 			
 		</div><!-- .search-entry-content -->
 

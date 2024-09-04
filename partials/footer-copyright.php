@@ -13,9 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Get copyright text
-$copy = get_theme_mod( 'wpex_copyright' );
-$copy = $copy ? $copy : '<a href="https://www.wpexplorer.com/corporate-free-wordpress-theme/" title="Corporate WordPress Theme">Corporate Theme</a> by <a href="https://www.wpexplorer.com" title="WPExplorer Themes">WPExplorer</a> Powered by <a href="https://wordpress.org/" title="WordPress">WordPress</a>'; ?>
+// Get copyright text.
+$copy = get_theme_mod( 'wpex_copyright' ) ?: 'Copyright ' . get_the_date( 'Y' ) . ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>';
+
+?>
 
 <footer id="copyright-wrap" class="clear">
 	<div id="copyright" role="contentinfo" class="clr">

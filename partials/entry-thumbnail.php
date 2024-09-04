@@ -12,8 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// REturn if disabled or there isn't a thumbnail defined
-if ( ! has_post_thumbnail() || ! get_theme_mod( 'wpex_blog_entry_thumb', true ) ) {
+// Return if disabled or there isn't a thumbnail defined
+if ( post_password_required() || ! has_post_thumbnail() || ! get_theme_mod( 'wpex_blog_entry_thumb', true ) ) {
 	return;
 } ?>
 

@@ -202,7 +202,7 @@ class cmb_Meta_Box_types {
 	 * @param  int    $i    Iterator value
 	 * @return string       Gnerated list item html
 	 */
-	public function list_input( $args = array(), $i ) {
+	public function list_input( $args = array(), $i = '' ) {
 		$args = $this->parse_args( $args, 'list_input', array(
 			'type'  => 'radio',
 			'class' => 'cmb_option',

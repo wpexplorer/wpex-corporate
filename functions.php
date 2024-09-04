@@ -23,16 +23,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
-function wpex_theme_info() {
-	return array(
-		'name'    => 'WPEX Corporate',
-		'slug'    => 'wpex-corporate',
-		'url'     => 'https://www.wpexplorer.com/corporate-free-wordpress-theme/',
-		'support' => 'https://github.com/wpexplorer/wpex-corporate/issues/',
-	);
-}
-
 class WPEX_Theme_Class {
+
+	/**
+	 * Current version.
+	 */
+	public $version = '3.0';
 
 	/**
 	 * Main Theme Class Constructor
@@ -63,15 +59,11 @@ class WPEX_Theme_Class {
 		// Register sidebar widget areas
 		add_action( 'widgets_init', array( $this, 'register_sidebars' ) );
 
-		// Alter post formats based on custom post types
-		add_action( 'load-post.php', array( $this, 'adjust_formats' ) );
-		add_action( 'load-post-new.php', array( $this, 'adjust_formats' ) );
-
 		// Alters posts per page for specific archives
 		add_filter( 'pre_get_posts', array( $this, 'posts_per_page' ) );
 
 		// Set default gallery metabox post types
-		add_filter( 'wpex_gallery_metabox_post_types', array( $this, 'gallery_metabox' ), 1 );
+		add_filter( 'wpex_gallery_metabox_post_types', '__return_empty_array', 1 );
 
 		// Filter the archive title
 		add_filter( 'get_the_archive_title', array( $this, 'get_the_archive_title' ) );
@@ -85,28 +77,9 @@ class WPEX_Theme_Class {
 	 * @access  public
 	 */
 	public function constants() {
-
-		define( 'WPEX_THEME_VERSION', $this->theme_version() );
-		define( 'WPEX_INCLUDES_DIR', get_template_directory() .'/inc/' );
-		define( 'WPEX_CLASSES_DIR', WPEX_INCLUDES_DIR .'/classes/' );
-		define( 'WPEX_JS_DIR_URI', get_template_directory_uri(). '/js/' );
-		define( 'WPEX_CSS_DIR_URI', get_template_directory_uri(). '/css/' );
-
-	}
-
-	/**
-	 * Returns current theme version
-	 *
-	 * @since   2.0.0
-	 * @access  public
-	 */
-	public function theme_version() {
-
-		// Get theme data
-		$theme = wp_get_theme();
-
-		// Return theme version
-		return $theme->get( 'Version' );
+		define( 'WPEX_THEME_VERSION', $this->version );
+		define( 'WPEX_INCLUDES_DIR', get_template_directory() . '/inc/' );
+		define( 'WPEX_CLASSES_DIR', WPEX_INCLUDES_DIR . '/classes/' );
 
 	}
 
@@ -136,14 +109,6 @@ class WPEX_Theme_Class {
 
 		// Comments output
 		require_once get_parent_theme_file_path( '/inc/comments-callback.php' );
-
-		// MCE Editor tweaks
-		require_once get_parent_theme_file_path( '/inc/mce-tweaks.php' );
-
-		if ( is_admin() ) {
-			require_once get_parent_theme_file_path( '/admin/dashboard-feed.php' );
-			require_once get_parent_theme_file_path( '/admin/about.php' );
-		}
 	}
 
 	/**
@@ -197,29 +162,29 @@ class WPEX_Theme_Class {
 
 		// Register navigation menus
 		register_nav_menus ( array(
-				'main_menu'	=> esc_html__( 'Main', 'wpex-corporate' ),
+			'main_menu'	=> esc_html__( 'Main', 'wpex-corporate' ),
 		) );
 
 		// Localization support
-		load_theme_textdomain( 'wpex-corporate', get_template_directory() .'/languages' );
+		load_theme_textdomain( 'wpex-corporate', get_template_directory() . '/languages' );
 
 		// Add theme support
 		add_theme_support( 'post-thumbnails' );
-		add_theme_support( 'post-formats', array( 'video' ) );
 		add_theme_support( 'custom-logo' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'custom-background' );
-
-		// Set default thumbnail size
-		set_post_thumbnail_size( 150, 150 );
+		add_theme_support( 'wp-block-styles' );
 
 		// Add image sizes
-		add_image_size( 'wpex-entry', 640, 9999, false );
-		add_image_size( 'wpex-post', 640, 9999, false );
+		add_image_size( 'wpex-entry', 9999, 9999, false );
+		add_image_size( 'wpex-post', 9999, 9999, false );
 		if ( get_theme_mod( 'wpex_homepage_slider', true ) ) {
-			add_image_size( 'wpex-home-slider', 1060, 400, true );
+			add_image_size( 'wpex-home-slider', 9999, 9999, true );
 		}
+
+		// Editor CSS.
+		add_editor_style();
 	}
 
 	/**
@@ -244,31 +209,19 @@ class WPEX_Theme_Class {
 	 */
 	public function enqueue_scripts() {
 
-		// CSS
+		wp_enqueue_style(
+			'wpex-font-awesome',
+			get_theme_file_uri( '/assets/lib/fontawesome/css/all.min.css' ),
+			array(),
+			'6.0'
+		);
+
 		wp_enqueue_style(
 			'wpex-style',
 			get_stylesheet_uri(),
-			false,
+			array(),
 			WPEX_THEME_VERSION
 		);
-
-		wp_enqueue_style(
-			'wpex-font-awesome',
-			get_theme_file_uri( '/css/font-awesome.min.css' ),
-			false,
-			'4.3.0'
-		);
-		
-		wp_enqueue_style(
-			'google-font-montserrat',
-			'http://fonts.googleapis.com/css?family=Montserrat:400,700',
-			array( 'wpex-style' ),
-			null
-		);
-
-		if ( function_exists( 'wpcf7_enqueue_styles') ) {
-			wp_dequeue_style( 'contact-form-7' );
-		}
 
 		// jQuery
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -276,19 +229,63 @@ class WPEX_Theme_Class {
 		}
 
 		wp_enqueue_script(
-			'wpex-plugins',
-			get_theme_file_uri( '/js/plugins.js' ),
+			'wpex-superfish',
+			get_theme_file_uri( 'assets/js/superfish.js' ),
 			array( 'jquery' ),
 			WPEX_THEME_VERSION,
-			true
+			[
+				'strategy' => 'defer',
+			]
 		);
 
 		wp_enqueue_script(
-			'wpex-global',
-			get_theme_file_uri( '/js/global.js' ),
-			array( 'jquery', 'wpex-plugins' ),
+			'wpex-sidr',
+			get_theme_file_uri( 'assets/js/sidr.js' ),
+			array( 'jquery' ),
 			WPEX_THEME_VERSION,
-			true
+			[
+				'strategy' => 'defer',
+			]
+		);
+		
+		wp_enqueue_script(
+			'wpex-global',
+			get_theme_file_uri( 'assets/js/global.js' ),
+			array( 'jquery', 'wpex-superfish', 'wpex-sidr' ),
+			WPEX_THEME_VERSION,
+			[
+				'strategy' => 'defer',
+			]
+		);
+
+		wp_register_script(
+			'wpex-flexslider',
+			get_theme_file_uri( 'assets/js/flexslider.js' ),
+			array( 'jquery' ),
+			WPEX_THEME_VERSION,
+			[
+				'strategy' => 'defer',
+			]
+		);
+
+		wp_register_script(
+			'wpex-home-slider',
+			get_theme_file_uri( 'assets/js/home-slider.js' ),
+			array( 'wpex-flexslider' ),
+			WPEX_THEME_VERSION,
+			[
+				'strategy' => 'defer',
+			]
+		);
+
+		wp_register_script(
+			'wpex-post-slider',
+			get_theme_file_uri( 'assets/js/post-slider.js' ),
+			array( 'wpex-flexslider' ),
+			WPEX_THEME_VERSION,
+			[
+				'strategy' => 'defer',
+			]
 		);
 
 	}
@@ -348,32 +345,6 @@ class WPEX_Theme_Class {
 	}
 
 	/**
-	 * Alter post formats based on custom post types
-	 *
-	 * @since   2.0.0
-	 * @access  public
-	 */
-	public function adjust_formats() {
-		if ( isset( $_GET['post'] ) ) {
-			$post = get_post($_GET['post']);
-			if ($post) {
-				$post_type = $post->post_type;
-			}
-		} elseif ( ! isset( $_GET['post_type'] ) ) {
-			$post_type = 'post';
-		} elseif ( in_array( $_GET['post_type'], get_post_types( array('show_ui' => true ) ) ) ) {
-			$post_type = $_GET['post_type'];
-		} else {
-			return; // Page is going to fail anyway
-		}
-		if ( 'portfolio' == $post_type ) {
-			add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
-		} elseif ( 'post' == $post_type ) {
-			add_theme_support( 'post-formats', array( 'video' ) );
-		}
-	}
-
-	/**
 	 * Alters posts per page for specific archives
 	 *
 	 * @since   2.0.0
@@ -406,17 +377,6 @@ class WPEX_Theme_Class {
 	 * @since   2.0.0
 	 * @access  public
 	 */
-	public function gallery_metabox( $types ) {
-		$types = array();
-		return $types;
-	}
-
-	/**
-	 * Set default gallery metabox post types
-	 *
-	 * @since   2.0.0
-	 * @access  public
-	 */
 	public function get_the_archive_title( $title ) {
 		if ( is_tax() || is_category() ) {
 			$title = single_term_title();
@@ -425,4 +385,5 @@ class WPEX_Theme_Class {
 	}
 
 }
+
 $corporate_theme_setup = new WPEX_Theme_Class;

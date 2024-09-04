@@ -12,6 +12,6 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<div class="entry clr">
+<div class="post-content entry clr">
 	<?php the_content(); ?>
 </div><!-- .entry -->

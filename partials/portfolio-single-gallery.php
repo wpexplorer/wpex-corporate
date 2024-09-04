@@ -16,7 +16,11 @@ $attachments = wpex_get_gallery_ids();
 // Return if there aren't any images
 if ( ! $attachments ) {
 	return;
-} ?>
+}
+
+wp_enqueue_script( 'wpex-post-slider' );
+
+?>
 
 <div class="post-slider-wrap clr flexslider-container">
 
@@ -27,22 +31,11 @@ if ( ! $attachments ) {
 			<?php
 			// Loop through each attachment ID
 			foreach ( $attachments as $attachment ) :
-				$img_url  = wp_get_attachment_url( $attachment );
-				$img_alt  = get_post_meta( $attachment, '_wp_attachment_image_alt', true ); ?>
-				<li>
-					<?php
-					// Display image with lightbox
-					if (  'on' == wpex_gallery_is_lightbox_enabled() ) : ?>
-						<a href="<?php echo esc_url( $img_url ); ?>" title="<?php echo esc_attr( $img_alt ); ?>" class="wpex-lightbox-item">
-							<?php echo wp_get_attachment_image( $attachment, 'wpex-portfolio-post' ); ?>
-						</a>
-					<?php
-					// Lightbox is disabled, only show image
-					else : ?>
-						<?php echo wp_get_attachment_image( $attachment, 'wpex-portfolio-post' ); ?>
-					<?php endif; ?>
-				</li>
-			<?php endforeach; ?>
+				if ( $image = wp_get_attachment_image( $attachment, 'wpex-portfolio-post' ) ) { ?>
+					<li><?php echo $image; ?></li>
+				<?php
+				}
+			endforeach; ?>
 
 		</ul><!-- .slides -->
 

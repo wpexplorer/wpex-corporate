@@ -4,6 +4,8 @@ defined( 'ABSPATH' ) || exit;
  * CMB field class
  * @since  1.1.0
  */
+
+#[\AllowDynamicProperties]
 class cmb_Meta_Box_field {
 
 	/**
